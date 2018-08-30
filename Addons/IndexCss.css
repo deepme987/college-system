@@ -1,0 +1,12 @@
+.nav {
+	float: left;
+}
+
+.content {
+	/*Temp padding*/
+	padding: 0px 0px 0px 100px;
+}
+
+.tt {
+	float: right;
+}
