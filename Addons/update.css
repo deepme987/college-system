@@ -1,0 +1,27 @@
+* {
+	margin: 0px;
+}
+
+.tags {
+  float: left;
+  padding: 28px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.container > form > input {
+  border-spacing: 5px;
+  padding: 5px;
+}
+
+div.tags > ul > li, div.container > form > ul > li {
+	font-style: Georgia,serif;
+	font-size: 15px;
+  padding: 15px;
+}
+
+div.tags > ul, div.container > form > ul {
+  list-style-type: none;
+}
