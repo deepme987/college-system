@@ -9,6 +9,7 @@
 <body>		
 	
 	<?php
+		include 'session.php';
 		echo"<h3>Change Password for ".$_GET['id']." </h3>";
 	?>
 
@@ -32,6 +33,7 @@
 					<li><input type="password" name="New" value=""><br></li>
 					<li><input type="submit" value="Update"></li>
 				</form> 
+				<a href="home.php?page=update.php" value="Back">Go Back</a>
 			</div>';
 		}
 

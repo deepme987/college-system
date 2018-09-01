@@ -18,6 +18,7 @@
         <div class="rightheader">
             <ul class="mainddheader">
                 <li>Name</li>
+                <li><a href="login.php">Logout</a></li>
             </ul>
 
             <div class="block">
@@ -40,15 +41,18 @@
                 <li><a href="#">Attendance record</a></li>
                 <li><a href="#">Assignments</a></li>
                 <li><a href="#">Events in college</a></li>
+                <li><a href="home.php?page=list.php">Student List</a></li>
                 <li><a href="#">Timetable</a></li>
-                <li><a href="home.php?page=update.php&id=">My profile</a></li>
+                <li><a href="home.php?page=update.php">My profile</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="maincontent">
             <?php
-                include $_GET['page'];
+                if (isset($_GET['page'])&&$_GET['page']!=""){
+                    include $_GET['page'];
+                }
             ?>
         </div>
 

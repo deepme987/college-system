@@ -9,6 +9,11 @@
     </script> 
 </head>
 <body>
+
+    <?php
+        session_start();
+        session_unset();
+    ?>
     <div class="block">
       
         <div class="image">
@@ -17,11 +22,11 @@
       
         <div class="form">
       
-            <form action="#" method="POST">
+            <form action="login.php?login=true" method="POST">
                 <p class="formp">Username</p>
-                <input type=text placeholder="Enter username">
+                <input name="id" type=text placeholder="Enter username">
                 <p class="formp">Password</p>
-                <input type=password placeholder="Enter password"><br><br>
+                <input name="pass" type=password placeholder="Enter password"><br><br>
                 <input type=submit value="Login"><br>
                 <input type=button value="Reset">
                 <a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
@@ -37,7 +42,7 @@
 	                    $_SESSION['type']="user";
 	                }
 	                $_SESSION['name']=$_POST['id'];
-	                header("Location: update.php?id=".$_SESSION['name']);
+	                header("Location: home.php?id=".$_SESSION['name']);
 	            }
 	        ?>
 	    </div>

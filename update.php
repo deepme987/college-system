@@ -8,6 +8,10 @@
 </head>
 <body>		
 	
+	<?php
+		include 'session.php';
+	?>
+
 	<div class="tags">
 		<ul>
 			<li>Smart-Card No: </li>
@@ -46,8 +50,9 @@
 					<li><span>'.$row["RollNo"].'</span><br></li>
 					<li><input type="number" name="MobNo" value="'.$row["MobNo"].'"><br></li>
 					<li><input type="text" name="Addr" value="'.$row["Addr"].'"><br></li>
-					<li><input type="submit" value="Update"></li>
+					<li><input type="submit" value="Update"></li></ul>
 				</form> 
+				<a href="home.php?page=new_pass.php">Change Password</a>
 			</div>';
 
 			mysqli_close($conn);
@@ -67,10 +72,8 @@
 
 			$sql = "UPDATE `profile` SET MobNo=".$_POST['MobNo'].", Addr=\"".$_POST['Addr']."\" WHERE UserId=\"".$_GET['id']."\"";
 
-			echo $sql;
-
 			if (mysqli_query($conn, $sql)) {
-				echo "Added details.";
+				echo "Updated Profile, redirecting to home...";
 			}
 	
 			else {
@@ -78,7 +81,8 @@
 			}
 
 			mysqli_close($conn);
-			header('Location: update.php?id='.$_GET['id']);	
+
+			header("refresh:3; url=http://localhost/Git/college-system/update.php?id=".$_GET['id']);	
 		}
 		
 		?>

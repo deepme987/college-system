@@ -7,7 +7,7 @@
 				}
 			}
 			else {
-				header("Location: ".$_SERVER['REQUEST URI']."?id=".$_SESSION['name']);
+				// header("Location: ".$_SERVER['REQUEST URI']."?id=".$_SESSION['name']."&page=".$_GET['page']);
 			}
 		}
 		else {
