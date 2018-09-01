@@ -12,7 +12,7 @@
 		}
 	?>
 	<div class="form">
-		<form action="home.php?add_value=true" method="POST">
+		<form action="home.php?page=list.php&add_value=true" method="POST">
 			<br>
 			<input type="text" name="UserId" placeholder="User id">
 			<input type="text" name="Fname" placeholder="First Name">
@@ -50,7 +50,7 @@
 
 				mysqli_close($conn);
 
-				header('Location: home.php?page=list.php');
+				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=list.php");
 			}
 				
 		?>
