@@ -1,59 +1,81 @@
 <html>
-<title>Home</title>
+<title>Login</title>
 <head>
-    <link rel="stylesheet" type="text/css" href="Addons/main.css">
+	<link rel="stylesheet" type="text/css" href="Addons/login.css">
+	<script>
+		function forgot(){
+			window.alert("Mail ur details at peacock@gmail.com");
+		}
+	</script> 
 </head>
 <body>
 
-    <div class="header">
+	<?php
+		session_start();
+		session_unset();
+	?>
+	<div class="block">
+	  
+		<div class="image">
+			<img src="Addons/person-flat.png" alt="P">
+		</div>
+	  
+		<div class="form">
+	  
+			<form action="login.php?login=true" method="POST">
+				<p class="formp">Username</p>
+				<input name="id" type=text placeholder="Enter username">
+				<p class="formp">Password</p>
+				<input name="pass" type=password placeholder="Enter password"><br><br>
+				<input type=submit value="Login"><br>
+				<input type=button value="Reset">
+				<a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
+			</form>
+	  	
+			<?php
+				if (isset($_GET['login'])) {
+					validate();
+				}
 
-        <div class="leftheader">
-            <p class="pheader">EduSystem</p>
-        </div>
+				function validate()
+				{
+					$user = 'student';
+					$pass = 'sakec';
+					$db = 'students';
 
-        <div class="rightheader">
-            <ul class="mainddheader">
-                <li>Name</li>
-                <li><a href="login.php">Logout</a></li>
-            </ul>
+					$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-            <div class="block">
-                <ul class="insideddheader">
-                    <li>Profile</li>
-                    <li>Need help?</li>
-                    <li>logout</li>
-                </ul>
-            </div>
-        </div> 
-    </div>
+					$check = "SELECT Pass FROM profile WHERE UserId=\"".$_POST['id']."\"";
 
-    <div class="flex-container">
-            <div class="iasideleft">
-                <ul class="nav">
-                <li><a class="btn active" href="home.php">Dashboard</a></li>
-                <li><a class="btn" href="#">Attendance record</a></li>
-                <li><a class="btn" href="#">Assignments</a></li>
-                <li><a class="btn" href="#">Events in college</a></li>
-                <li><a class="btn" href="home.php?page=list.php">Student List</a></li>
-                <li><a class="btn" href="#">Timetable</a></li>
-                <li><a class="btn" href="home.php?page=update.php">My profile</a></li>
-                </ul>
-            </div>
+					$data = mysqli_query($conn, $check) or die("User not found.");
 
-        <div class="maincontent">
-            <?php
-                if (isset($_GET['page'])&&$_GET['page']!=""){
-                    include $_GET['page'];
-                }
-            ?>
-        </div>
+					$row = mysqli_fetch_assoc($data);
 
-        <div class="asideright">
-            
-        </div>
+					if ($_POST['pass'] == $row['Pass']) {
+						mysqli_close($conn);
+						session();
+					}
 
-    </div>
+					else {
+						echo "<div class=\"form\"><p>Wrong Id or Password</p></div>";
+					}
+				}
 
-    <script src="Addons/js.js" type="text/javascript"></script>
+				function session() {
+					session_start();
+					if ($_POST['id']=="0") {
+						$_SESSION['type']="admin";
+					}
+					else {
+							$_SESSION['type']="user";
+					}
+					$_SESSION['name']=$_POST['id'];
+					header("Location: home.php");
+				}
+			?>
+		</div>
+		
+	</div>
+
 </body>
 </html>
