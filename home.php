@@ -5,10 +5,6 @@
 </head>
 <body>
 
-    <?php
-        include 'session.php';
-    ?>
-
     <div class="header">
 
         <div class="leftheader">

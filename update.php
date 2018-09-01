@@ -34,14 +34,14 @@
 
 			$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-			$get_all = "select * from profile where UserId=\"".$_GET['id']."\"";
+			$get_all = "select * from profile where UserId=\"".$_SESSION['name']."\"";
 				
 			$data = mysqli_query($conn, $get_all) or die("No records found.");
 
 			$row = mysqli_fetch_assoc($data);
 
 			echo'<div class="container">
-				<form action="update.php?update=true&&id='.$_GET["id"].'" method="POST">
+				<form action="home.php?page=update.php&update=true" method="POST">
 					<br><ul>
 					<li>'.$row["UserId"].'</li>
 					<li>'.$row["RegNo"].'</li>
@@ -70,7 +70,7 @@
 			$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
 
-			$sql = "UPDATE `profile` SET MobNo=".$_POST['MobNo'].", Addr=\"".$_POST['Addr']."\" WHERE UserId=\"".$_GET['id']."\"";
+			$sql = "UPDATE `profile` SET MobNo=".$_POST['MobNo'].", Addr=\"".$_POST['Addr']."\" WHERE UserId=\"".$_SESSION['name']."\"";
 
 			if (mysqli_query($conn, $sql)) {
 				echo "Updated Profile, redirecting to home...";
@@ -82,7 +82,7 @@
 
 			mysqli_close($conn);
 
-			header("refresh:3; url=http://localhost/Git/college-system/update.php?id=".$_GET['id']);	
+			header("Location: home.php?page=update.php");
 		}
 		
 		?>

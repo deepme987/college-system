@@ -10,7 +10,7 @@
 	
 	<?php
 		include 'session.php';
-		echo"<h3>Change Password for ".$_GET['id']." </h3>";
+		echo"<h3>Change Password for ".$_SESSION['name']." </h3>";
 	?>
 
 	<div class="tags">
@@ -27,7 +27,7 @@
 		function disp() {
 
 			echo'<div class="container">
-				<form action="new_pass.php?update=true&&id='.$_GET["id"].'" method="POST">
+				<form action="home.php?page=new_pass.php&update=true" method="POST">
 					<br><ul>
 					<li><input type="password" name="Old" value=""><br></li>
 					<li><input type="password" name="New" value=""><br></li>
@@ -45,10 +45,12 @@
 			$new = $_POST['New'];
 			
 			if ($old=="" || $new=="") {
-				exit("Please enter all details.");
+				echo"<div class=\"container\"><p>Enter all details.</p></div>";
 			}
 
-			update($old, $new);
+			else {
+				update($old, $new);
+			}
 		}
 
 	
@@ -61,31 +63,29 @@
 
 			$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-			$check = "SELECT Pass FROM profile WHERE UserId=\"".$_GET['id']."\"";
-
-			echo $check;
+			$check = "SELECT Pass FROM profile WHERE UserId=\"".$_SESSION['name']."\"";
 
 			$data = mysqli_query($conn, $check) or die("No records found.");
 
 			$row = mysqli_fetch_assoc($data);
 
-			echo $row['Pass'];
+			if ($old == $row['Pass']) {
+				$sql = "UPDATE `profile` SET Pass=\"".$_POST['New']."\" WHERE UserId=\"".$_SESSION['name']."\"";
 
-			if ($old != $row['Pass']) {
-				exit("Wrong password.");
-			}
-
-			$sql = "UPDATE `profile` SET Pass=\"".$_POST['New']."\" WHERE UserId=\"".$_GET['id']."\"";
-
-			if (mysqli_query($conn, $sql)) {
-				echo "Password changed, redirecting to your profile...";
-			}
+				if (mysqli_query($conn, $sql)) {
+					echo "<div class=\"container\"><p>Password changed, redirecting to your profile...</p></div>";
+				}
 	
-			else {
-				echo "Error: ".mysqli_error($conn);
+				else {
+					echo "Error: ".mysqli_error($conn);
+				}
+				mysqli_close($conn);
+				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=update.php");
 			}
-			mysqli_close($conn);
-			header("refresh:3; url=http://localhost/Git/college-system/new_pass.php?id=".$_GET['id']);
+			
+			else {
+				echo "<div class=\"container\"><p>Wrong Password</p></div>";
+			}
 		}
 		
 	?>

@@ -12,7 +12,7 @@
 		}
 	?>
 	<div class="form">
-		<form action="add_details.php?add_value=true" method="POST">
+		<form action="home.php?add_value=true" method="POST">
 			<br>
 			<input type="text" name="UserId" placeholder="User id">
 			<input type="text" name="Fname" placeholder="First Name">
@@ -50,7 +50,7 @@
 
 				mysqli_close($conn);
 
-				header('Location: add_details.php');
+				header('Location: home.php?page=list.php');
 			}
 				
 		?>

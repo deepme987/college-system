@@ -33,7 +33,7 @@
             </form>
       	
       		<?php
-	            if (isset($_GET['login'])) {  
+	            if (isset($_GET['login'])) {
 	                session_start();
 	                if ($_POST['id']=="0") {
 	                    $_SESSION['type']="admin";
@@ -42,7 +42,7 @@
 	                    $_SESSION['type']="user";
 	                }
 	                $_SESSION['name']=$_POST['id'];
-	                header("Location: home.php?id=".$_SESSION['name']);
+	                header("Location: home.php");
 	            }
 	        ?>
 	    </div>

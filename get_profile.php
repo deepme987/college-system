@@ -17,7 +17,7 @@
 
 		$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-		$get_all = "select * from profile";
+		$get_all = "select * from profile where UserId!=\"0\"";
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");
 
