@@ -1,0 +1,33 @@
+.table > table {
+	border: 2px solid black;
+	padding: 2px;
+	border-spacing: 0px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td, th {
+	border: solid 1px black;
+	text-align: center;
+}
+
+.table th {
+	background-color: #777777;
+	color: white;
+}
+
+.table tr:nth-child(even) {
+	background-color: lightyellow;
+}
+
+.table tr:hover {
+	background-color: lightblue;
+}
+
+.form {
+	padding: 10px 0px 0px 50px;
+}
+
+.list {
+	padding: 50px;
+}
