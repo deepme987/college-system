@@ -56,7 +56,6 @@
 	
 		function update($old, $new) {
 
-
 			$user = 'student';
 			$pass = 'sakec';
 			$db = 'students';
@@ -82,7 +81,7 @@
 				mysqli_close($conn);
 				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=update.php");
 			}
-			
+
 			else {
 				echo "<div class=\"container\"><p>Wrong Password</p></div>";
 			}

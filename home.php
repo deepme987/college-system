@@ -1,7 +1,7 @@
 <html>
 <title>Home</title>
 <head>
-    <link rel="stylesheet" type="text/css" href="Addons/home.css">
+    <link rel="stylesheet" type="text/css" href="Addons/main.css">
 </head>
 <body>
 
@@ -28,21 +28,17 @@
     </div>
 
     <div class="flex-container">
-
-        <div class="asideleft">
-
             <div class="iasideleft">
-                <ul class="ulasideleft">
-                <li><a href="home.php">Dashboard</a></li>
-                <li><a href="#">Attendance record</a></li>
-                <li><a href="#">Assignments</a></li>
-                <li><a href="#">Events in college</a></li>
-                <li><a href="home.php?page=list.php">Student List</a></li>
-                <li><a href="#">Timetable</a></li>
-                <li><a href="home.php?page=update.php">My profile</a></li>
+                <ul class="nav">
+                <li><a class="btn active" href="home.php">Dashboard</a></li>
+                <li><a class="btn" href="#">Attendance record</a></li>
+                <li><a class="btn" href="#">Assignments</a></li>
+                <li><a class="btn" href="#">Events in college</a></li>
+                <li><a class="btn" href="home.php?page=list.php">Student List</a></li>
+                <li><a class="btn" href="#">Timetable</a></li>
+                <li><a class="btn" href="home.php?page=update.php">My profile</a></li>
                 </ul>
             </div>
-        </div>
 
         <div class="maincontent">
             <?php
@@ -58,5 +54,6 @@
 
     </div>
 
+    <script src="Addons/js.js" type="text/javascript"></script>
 </body>
 </html>
