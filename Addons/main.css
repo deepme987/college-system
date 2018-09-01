@@ -17,7 +17,7 @@ body
 }
 .asideleft
 {
-    flex:10%;
+    flex:15%;
     /*height:700px;*/
 }
 .maincontent
@@ -134,14 +134,14 @@ ul.nav  {
 
 ul.nav > li {
     /*float: left;*/
-    padding: 5px;
+    padding: 0px;
 }
 
 ul.nav > li > a {
     display: block;
     color: white;
     border: none;
-    padding: 16px 25px;
+    padding: 20px 30px;
     text-align: left;
     transition: all 0.7s ease;
     text-decoration: none;

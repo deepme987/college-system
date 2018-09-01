@@ -22,7 +22,7 @@
 	  
 		<div class="form">
 	  
-			<form action="login.php?login=true" method="POST">
+			<form action="index.php?login=true" method="POST">
 				<p class="formp">Username</p>
 				<input name="id" type=text placeholder="Enter username">
 				<p class="formp">Password</p>

@@ -14,7 +14,7 @@
         <div class="rightheader">
             <ul class="mainddheader">
                 <li>Name</li>
-                <li><a href="login.php">Logout</a></li>
+                <li><a href="index.php">Logout</a></li>
             </ul>
 
             <div class="block">
@@ -28,7 +28,7 @@
     </div>
 
     <div class="flex-container">
-            <div class="iasideleft">
+            <div class="asideleft">
                 <ul class="nav">
                 <li><a class="btn active" href="home.php">Dashboard</a></li>
                 <li><a class="btn" href="#">Attendance record</a></li>
