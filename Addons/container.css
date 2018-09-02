@@ -1,13 +1,75 @@
-.container {
-	padding: 10px;
+.details,.notification
+{
+    background-color: rgba(255,255,255,0.5);
+    color:black;
+    text-align:left;
+    width:100%;
+}
+.details ul
+{
+    padding:10px;
+    list-style-type: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.details ul li
+{
+    font-family:serif;
+    padding:5px;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+.details p
+{
+    margin-top:0;
+    margin-bottom:0;
+    padding:10 0 0 10;
+    font-family:cursive;
+    font-style: italic;
+    font-weight: bold
+}
+hr
+{
+    border-bottom: 1px solid black;
+    width:15%;
+}
+.left
+{
+    float:left;
 }
 
-.container > ul {
-	list-style-type: none;
+.attendance,.events
+{
+    padding:0 0 10 0;
+    background-color: rgba(255,255,255,0.7);
+    color:black;
+    text-align:left;
+    width:100%;
+}
+.tattendance
+{
+    border: 1px solid black;
+    margin:10px;
+    text-align: center;
+}
+.attendance p,.notification p,.events p
+{
+    margin-top:0;
+    margin-bottom:10px ;
+    padding:10 0 0 10;
+    font-family:cursive;
+    font-style: italic;
+    font-weight: bold
+}
+th,td
+{
+    border: 1px solid black;
+    font-family:serif;
+    font-style: oblique;
+    padding:5px;
+}
+.events
+{
+    padding:0;
 }
 
-.container > ul > li {
-	font-style: Georgia,serif;
-	font-size: 15px;
-	padding: 10px;
-}
