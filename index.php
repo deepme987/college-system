@@ -33,7 +33,7 @@
 			</form>
 	  	
 			<?php
-				if (isset($_GET['login'])) {
+				if (isset($_GET['login'])&&$_POST['id']!="") {
 					validate();
 				}
 

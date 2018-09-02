@@ -72,5 +72,10 @@ input[type=submit]:hover,input[type=button]:hover
     margin-top:0px;
     font-size: 15px;
 }
+form a 
+{
+    text-decoration: none;
+    color:dodgerblue;
+}
 
 
