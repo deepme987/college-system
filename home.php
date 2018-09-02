@@ -47,13 +47,13 @@
     <div class="flex-container">
             <div class="asideleft">
                 <ul class="nav">
-                    <li><a class="btn active" href="home.php">Dashboard</a></li>
-                    <li><a class="btn" href="#">Attendance record</a></li>
-                    <li><a class="btn" href="#">Assignments</a></li>
-                    <li><a class="btn" href="#">Events in college</a></li>
-                    <li><a class="btn" href="home.php?page=list.php">Student List</a></li>
-                    <li><a class="btn" href="#">Timetable</a></li>
-                    <li><a class="btn" href="home.php?page=update.php">My profile</a></li>
+                    <li><a class="btn <?php if($_GET["page"]==""){echo 'active';}?>" href="home.php">Dashboard</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="attendance.php"){echo 'active';}?>" href="#">Attendance record</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="assign.php"){echo 'active';}?>" href="#">Assignments</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="events.php"){echo 'active';}?>" href="#">Events in college</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="list.php"){echo 'active';}?>" href="home.php?page=list.php">Student List</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="tt.php"){echo 'active';}?>" href="#">Timetable</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="update.php"){echo 'active';}?>" href="home.php?page=update.php">My profile</a></li>
                 </ul>
             </div>
 
@@ -144,6 +144,6 @@
 
     </div>
 
-    <script src="Addons/js.js" type="text/javascript"></script>
+    <!-- <script src="Addons/js.js" type="text/javascript"></script> -->
 </body>
 </html>

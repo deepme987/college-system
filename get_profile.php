@@ -8,16 +8,22 @@
 </head>
 <body>
 	<h2>Student List</h2>
-	<h3>TE 4</h3>
 	<?php
-		
+
 		$user = 'student';
 		$pass = 'sakec';
 		$db = 'students';
 
 		$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-		$get_all = "select Fname, Lname, Class, Division, RollNo from profile where UserId!=\"0\"";
+		$fetchdiv = "select * from profile where UserId=\"".$_SESSION['name']."\"";
+
+		$temp = mysqli_query($conn, $fetchdiv) or die("Record not found.");
+
+		$div = mysqli_fetch_assoc($temp);
+
+		echo "<h3>TE ".$div['Division']."</h3>";
+		$get_all = "select Fname, Lname, Class, Division, RollNo from profile where UserId!=\"0\" and Division=".$div['Division']." order by RollNo";
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");
 
