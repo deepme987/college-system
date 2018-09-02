@@ -28,7 +28,7 @@ body
 }
 .asideright
 {
-    height:700px;
+    /*height:700px;*/
     flex:15%;
     background-color: aqua;
 }
@@ -72,10 +72,10 @@ body
 {
     display: block;
 }
-.block
+/*.ddblock
 {
     display:none;
-}
+}*/
 .insideddheader
 {
     padding:0;
@@ -92,6 +92,11 @@ body
 {
     font-size:15px;
     padding:15px;
+}
+.insideddheader li a
+{
+    text-decoration: none;
+    color:black;
 }
 .insideddheader li:hover
 {
@@ -167,6 +172,53 @@ ul.nav > li > a.active {
 
 ul.nav > li a:hover {
     background-color: #111;
+}
+/*----------------------------------------------------------asideright------------------------------------------------------------------*/
+/*.iasideright p
+{
+    font-family: cursive;
+    font-size:20px;
+    margin-bottom: 0;
+}*/
+hr 
+{
+    display: block;
+    margin-top: 0.5px;
+    margin-left:0;
+    margin-right: 20%;
+    border-style: inset;
+    border:1px solid black;
+}
+.asiderighttable
+{
+    width:100%;
+    background-color: white;
+}
+table,th,td
+{
+    border-collapse:collapse;   
+}
+.asiderighttable th
+{
+    border:0px;
+    padding:10px;
+    background-color: black;
+}
+.asiderighttable tr:nth-child(even)
+{
+    background-color:#333;
+    color:white;
+}
+.asiderighttable tr:nth-child(odd)
+{
+    background-color:#808080;
+    color:white;
+}
+.asiderighttable td
+{
+    border:0;
+    font-size: 20px;
+    padding:10px;
 }
 
 @media (max-width:700px)

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2018 at 10:55 AM
+-- Generation Time: Sep 01, 2018 at 05:00 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -238,13 +238,6 @@ CREATE TABLE `pma__table_uiprefs` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
 
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'students', 'profile', '{\"sorted_col\":\"`UserId` ASC\"}', '2018-09-01 18:28:42');
-
 -- --------------------------------------------------------
 
 --
@@ -281,7 +274,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2018-09-02 08:55:27', '{\"Console\\/Mode\":\"collapse\"}');
+('root', '2018-09-01 15:00:13', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
@@ -491,7 +484,7 @@ CREATE TABLE `profile` (
   `RollNo` int(2) NOT NULL,
   `MobNo` bigint(10) NOT NULL,
   `Addr` varchar(50) NOT NULL,
-  `Pass` varchar(32) NOT NULL DEFAULT 'sakec'
+  `Pass` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -500,13 +493,9 @@ CREATE TABLE `profile` (
 
 INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`, `RollNo`, `MobNo`, `Addr`, `Pass`) VALUES
 ('0', 'Admin', 'Admin', 0, '0', 0, 0, 0, '0', 'root'),
-('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'Blablabla', 'old'),
-('M2016CM1072', 'Deep', 'Mehta', 51422, 'TE', 2, 12, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1073', 'Deep', 'Mehta', 13024, 'TE', 3, 57, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1074', 'Deep', 'Mehta', 12312, 'TE', 1, 42, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1076', 'Deep', 'das', 12325, 'TE', 1, 31, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1077', 'Hello', 'World', 82421, 'TE', 1, 55, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1080', 'Deep', 'Mehta', 31235, 'TE', 1, 32, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec');
+('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'Blablabla', 'new'),
+('M2016CM1072', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
+('M2016CM1073', 'Deep', 'Mehta', 13024, 'TE', 3, 57, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec');
 
 --
 -- Indexes for dumped tables
@@ -516,8 +505,7 @@ INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`,
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
-  ADD PRIMARY KEY (`UserId`),
-  ADD UNIQUE KEY `RegNo` (`RegNo`);
+  ADD PRIMARY KEY (`UserId`);
 --
 -- Database: `teacher`
 --
