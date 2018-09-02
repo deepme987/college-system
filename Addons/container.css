@@ -1,0 +1,13 @@
+.container {
+	padding: 10px;
+}
+
+.container > ul {
+	list-style-type: none;
+}
+
+.container > ul > li {
+	font-style: Georgia,serif;
+	font-size: 15px;
+	padding: 10px;
+}
