@@ -62,6 +62,10 @@
                 if (isset($_GET['page'])&&$_GET['page']!=""){
                     include $_GET['page'];
                 }
+
+                else {
+                    include 'dashboard.php';
+                }
             ?>
         </div>
 
