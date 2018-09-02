@@ -61,7 +61,7 @@ hr
     font-style: italic;
     font-weight: bold
 }
-th,td
+.tattendance tr th, .tattendance tr td
 {
     border: 1px solid black;
     font-family:serif;

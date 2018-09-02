@@ -69,54 +69,78 @@
             ?>
         </div>
 
-        <div class="asideright">
-            <div class="iasideright">
-                    <!--<p>TimeTable</p>
-                    <hr>-->
-	               <table class="asiderighttable">
-                        <tr>
-                            <th>TIME</th>
-                            <th>DAY</th>
-                        </tr>
-                        <tr>
-                            <td>8.15-9.15</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>9.15-10.15</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>10.15-11.15</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>11.15-12.15</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>1.00-2.00</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>2.00-3.00</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>3.00-4.00</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>4.00-5.00</td>
-                            <td>blasss</td>
-                        </tr>
-                        <tr>
-                            <td>5.00-6.00</td>
-                            <td>blasss</td>
-                        </tr>
-                </table>
-            </div>
-        </div>
+        <?php
+
+            $user = 'student';
+            $pass = 'sakec';
+            $db = 'students';
+
+            $conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
+
+            $get_all = "select * from timetable";
+            
+            $data = mysqli_query($conn, $get_all) or die("No records found.");
+
+            $row = mysqli_fetch_assoc($data);
+
+
+            // $day = "\"".date('l')."\"";
+            $day = "Tuesday";
+
+            echo '<div class="asideright">
+                <div class="iasideright">
+                        <p class="tthead" align="center">Time Table for <br>'.$day.' </p>
+                        <table class="asiderighttable" >
+                            <tr>
+                                <th>Time</th>
+                                <th>Subject</th>
+                            </tr>';
+                            echo '<tr>
+                                <td>9.15-10.15</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>10.15-11.15</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>11.15-12.15</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>1.00-2.00</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>2.00-3.00</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>3.00-4.00</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>';
+                            $row = mysqli_fetch_assoc($data);
+                            echo '
+                            <tr>
+                                <td>4.00-5.00</td>
+                                <td>'.$row[$day].'</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>';
+            mysqli_close($conn);
+        ?>
 
     </div>
 

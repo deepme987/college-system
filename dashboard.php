@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>DashBoard</title>
-	<link rel="stylesheet" href="Addons/container.css">
+	<link rel="stylesheet" href="Addons/dashboard.css">
 	<link rel="stylesheet" href="">
 </head>
 <body>
