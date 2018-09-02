@@ -34,7 +34,7 @@
                     
                     $(document).ready(function(){
                        $("#dropdown").click(function(){
-                            $("#ddblock").toggle();
+                            $("#ddblock").fadeToggle();
                         });
                     });
             </script>
