@@ -43,14 +43,21 @@
                     <hr>
                     <table class="tattendance">
                     <tr>
+                    <th>Attended</th>
                     <th>Total</th>
-                    <th>Total Attended</th>
                     <th>Percentage</th>
                     </tr>
                     <tr>
-                    <td>'.$x.'</td>
-                    <td>'.$y.'</td>
-                    <td>'.($y/$x)*100 .'</td>
+                    <td>'.$row["Attended"].'</td>
+                    <td>'.$row["Total"].'</td>';
+                    if ($row["Total"]!=0) {
+                        echo '<td>'.$row["Percent"].'%</td>
+                    ';
+                    }
+                    else {
+                        echo '<td>0%</td>';
+                    }
+                    echo '
                     </tr>
                     </table>
                 </div>

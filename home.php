@@ -1,10 +1,7 @@
-<!--Test-->
-<!-- Remove Test -->
-<!-- Try 2 -->
 <html>
 <title>Home</title>
 <head>
-    <link rel="stylesheet" type="text/css" href="Addons/main.css">
+    <link rel="stylesheet" type="text/css" href="Addons/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -48,7 +45,7 @@
             <div class="asideleft">
                 <ul class="nav">
                     <li><a class="btn <?php if($_GET["page"]==""){echo 'active';}?>" href="home.php">Dashboard</a></li>
-                    <li><a class="btn <?php if($_GET["page"]=="attendance.php"){echo 'active';}?>" href="#">Attendance record</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="attendance.php"){echo 'active';}?>" href="home.php?page=attendance.php">Attendance record</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="assign.php"){echo 'active';}?>" href="#">Assignments</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="events.php"){echo 'active';}?>" href="#">Events in college</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="list.php"){echo 'active';}?>" href="home.php?page=list.php">Student List</a></li>
