@@ -19,6 +19,7 @@ body
 {
     flex:15%;
     /*height:700px;*/
+    background-color:#333;
 }
 .maincontent
 {
@@ -68,9 +69,10 @@ body
     font-size:20px;
     padding:10px;
 }
-.mainddheader li:hover .block
+.mainddheader li a
 {
-    display: block;
+    text-decoration: none;
+    color:white;
 }
 /*.ddblock
 {

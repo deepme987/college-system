@@ -4,6 +4,8 @@
 <title>Home</title>
 <head>
     <link rel="stylesheet" type="text/css" href="Addons/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -15,10 +17,10 @@
 
         <div class="rightheader">
             <ul class="mainddheader">
-                <li><a href="" onclick="dropdown()">Name</a></li>
+                <li><a id="dropdown" href="#" onclick="#">Name        <i class="fa fa-angle-down"></i></a></li>
             </ul>
 
-            <div class="ddblock" style="display:block">
+            <div id="ddblock" style="display:none">
                 <ul class="insideddheader">
                     <li><a href="home.php?page=update.php" >Profile</a></li>
                     <li onclick="needhelp()"><a href="" >Need help?</a></li>
@@ -27,13 +29,16 @@
             </div>
             
             <script type="text/javascript" >
-                function dropdown(){
-                    document.getElementByClassName("ddblock").style.display="none";
-                }
-                function needhelp()
-                {
-                    window.alert("mail ur problems at peacock@gmail.com");
-                }
+                    function needhelp()
+                    {
+                        window.alert("mail ur problems at peacock@gmail.com");
+                    }
+                    
+                    $(document).ready(function(){
+                       $("#dropdown").click(function(){
+                            $("#ddblock").toggle();
+                        });
+                    });
             </script>
         </div> 
     </div>

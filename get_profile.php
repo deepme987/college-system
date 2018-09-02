@@ -17,14 +17,14 @@
 
 		$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-		$get_all = "select * from profile where UserId!=\"0\"";
+		$get_all = "select Fname, Lname, Class, Division, RollNo from profile where UserId!=\"0\"";
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");
 
-		echo "<div class=\"table\"><table><tr><th>User Id</th><th>First Name</th><th>Last Name</th><th>Reg No</th><th>Class</th><th>Div</th><th>Roll No</th><th>Mobile</th><th>Address</th>";
+		echo "<div class=\"table\"><table><tr><th>First Name</th><th>Last Name</th><th>Class</th><th>Div</th><th>Roll No</th>";
 
 		while($row = mysqli_fetch_assoc($data)) {
-			echo "<tr><td>".$row["UserId"]."</td><td>".$row["Fname"]."</td><td>".$row["Lname"]."</td><td>".$row["RegNo"]."</td><td>".$row["Class"]."</td><td>".$row["Division"]."</td><td>".$row["RollNo"]."</td><td>".$row["MobNo"]."</td><td>".$row["Addr"]."</td></tr>";
+			echo "<tr><td>".$row["Fname"]."</td><td>".$row["Lname"]."</td><td>".$row["Class"]."</td><td>".$row["Division"]."</td><td>".$row["RollNo"]."</td></tr>";
 		}
 		echo "</table></div>"; 
 
