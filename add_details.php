@@ -13,6 +13,7 @@
 	?>
 	<h2>Add Details</h2>
 	<div class="form">
+        <div class="formsticky">
 		<form action="" method="POST">
 			<br>
 			<input type="text" name="UserId" placeholder="User id">
@@ -27,6 +28,7 @@
 			
 			<input type="submit" name="confirm" id="confirm" value="Add Values!">
 		</form> 
+        </div>
 
 		<?php
 
@@ -51,7 +53,7 @@
 
 				mysqli_close($conn);
 
-				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=list.php");
+//				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=list.php");
 			}
 				
 		?>

@@ -151,6 +151,7 @@ INSERT INTO `timetable` (`SrNo`, `Time`, `Monday`, `Tuesday`, `Wednesday`, `Thru
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `profile`
