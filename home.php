@@ -1,7 +1,6 @@
 <html>
 <title>Home</title>
 <head>
-    <link rel="stylesheet" type="text/css" href="Addons/main.css">
     <link rel="stylesheet" type="text/css" href="Addons/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,7 +90,7 @@
 
             echo '<div class="asideright">
                 <div class="iasideright">
-                        <p class="tthead" align="center">Time Table for <br>'.$day.' </p>';
+                        <p align="center">Time Table for <br>'.$day.' </p>';
 
                         if ($day=="Sunday" || $day=="Saturday") {
                             echo '<p class="tthead" align="center">Holiday<p>';

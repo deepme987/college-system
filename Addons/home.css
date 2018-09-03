@@ -7,11 +7,11 @@ body
 }
 .header
 {
-    border-bottom:1px solid white;
+    border-bottom:1px solid red;
     display:flex;
     width:100%;
-    height:15%;
-    /*background-color: red;*/
+    height:80px;
+    background-color:#202020;
     justify-content: center;
     box-shadow:2px 2px 2px black;
 }
@@ -25,12 +25,14 @@ body
     flex:15%;
     /*height:700px;*/
     background-color:#333;
+    
 }
 .maincontent
 {
     flex:70%;
     background-color:#D3D3D3;
     height:700px;
+    /*overflow: scroll;*/
 }
 .asideright
 {
@@ -52,10 +54,11 @@ body
 }
 .pheader
 {
-    margin:20 0 0 10px;
+    margin:10 0 0 10px;
     font-family: cursive;
     font-size: 40px;
-    color: white;
+    color:#ffbf00;
+    text-shadow:0.5px 0.5px 1px white;
 }
 .rightheader
 {
@@ -67,7 +70,7 @@ body
 .mainddheader
 {
     padding:0;
-    margin:0;
+    margin:-10px;
     list-style-type: none;
 }
 .mainddheader li
@@ -78,12 +81,9 @@ body
 .mainddheader li a
 {
     text-decoration: none;
-    color:white;
+    color:#ffbf00;
+    text-shadow:1px 1px 1px white;
 }
-/*.ddblock
-{
-    display:none;
-}*/
 .insideddheader
 {
     padding:0;
@@ -95,6 +95,7 @@ body
     background:white;
     width:100px;
     text-align: left;
+    box-shadow: 10px 10px 50px black;
 }
 .insideddheader li
 {
@@ -111,32 +112,6 @@ body
     background:lightblue;
 }
 /*----------------------------------------------------------asideleft------------------------------------------------------------------*/
-/*.ulasideleft
-{
-    list-style-type: none;
-    padding:0;
-    margin:0;
-}
-.ulasideleft li
-{   
-    font-family: fantasy;
-    padding:10px;
-    color:white;
-}
-.ulasideleft li a
-{
-    color:white;
-    text-decoration: none;
-}
-.ulasideleft li:hover
-{
-    background-color: chocolate;
-}
-.ulasideleft li:active
-{
-    background-color: chocolate;
-}
-*/
 ul.nav  {
     list-style-type: none;
     overflow: hidden;
@@ -170,12 +145,12 @@ ul.nav > li > p {
 
 ul.nav > li a:hover {
     background-color: #111;
-    color: yellow;
+    color:#ffc61a;
 }
 
 ul.nav > li > a.active {
     background-color: #111;
-    color: yellow;
+    color:#ffc61a;
 }
 
 ul.nav > li a:hover {
@@ -198,43 +173,47 @@ hr
     border:1px solid black;
 }
 
-.tthead {
-    color: yellow;
+.iasideright p {
+    color:#ffc61a;
     font-family: cursive;
 }
-
+table,th,td
+{
+    text-align: center;
+    border-collapse:collapse;   
+}
 .asiderighttable
 {
     width:100%;
     background-color: white;
 }
-
-table,th,td
-{
-    border-collapse:collapse;   
-}
-
 .asiderighttable th
 {
     border:0px;
     padding:10px;
     background-color: black;
+    border-bottom:1px solid white;
+    border-top:1px solid white;
 }
 
 .asiderighttable tr:nth-child(odd)
-{
-    background-color:#333;
-    color:white;
-}
-
-.asiderighttable tr:nth-child(even)
 {
     background-color:#666;
     color:white;
 }
 
+.asiderighttable tr:nth-child(even)
+{
+    background-color:#333;
+    color:white;
+}
+.asiderighttable tr:last-child
+{
+    border-bottom: 1px solid white;
+}
+
 .asiderighttable tr:hover {
-    color: yellow;
+    color:#ffc61a;
 }
 
 .asiderighttable td
