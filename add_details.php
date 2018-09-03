@@ -12,7 +12,7 @@
 		}
 	?>
 	<div class="form">
-		<form action="home.php?page=list.php&add_value=true" method="POST">
+		<form action="" method="POST">
 			<br>
 			<input type="text" name="UserId" placeholder="User id">
 			<input type="text" name="Fname" placeholder="First Name">
@@ -29,7 +29,7 @@
 
 		<?php
 
-			if (isset($_GET['add_value'])) {add();}
+			if (isset($_POST['confirm'])) {add();}
 			
 			function add() {
 
@@ -42,7 +42,7 @@
 				$sql = "INSERT INTO `profile`(`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`, `RollNo`, `MobNo`, `Addr`) VALUES (\"".$_POST['UserId']."\",\"".$_POST['Fname']."\",\"".$_POST['Lname']."\",".$_POST['RegNo'].",\"".$_POST['Class']."\",".$_POST['Division'].",".$_POST['RollNo'].",".$_POST['MobNo'].",\"".$_POST['Addr']."\")";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "Added details.";
+					echo "Added details, refreshing data...";
 				}
 				else {
 					echo "Error: ".mysqli_error($conn);

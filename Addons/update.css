@@ -21,3 +21,7 @@ div.tags > ul > li, div.container > form > ul > li {
 div.tags > ul, div.container > form > ul {
   list-style-type: none;
 }
+
+h2 {
+	text-align: center;
+}
