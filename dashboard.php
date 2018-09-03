@@ -62,14 +62,35 @@
                     </table>
                 </div>
                 <div class="notification">
-                    <p>Assignment Pending:</p>
+                    <p>Assignment:</p>
                     <hr>
                     <p></p>
                 </div>
                 <div class="events">
                     <p>Events:</p>
                     <hr>
-                    <p></p>
+                    <p>';
+
+            $user = 'student';
+            $pass = 'sakec';
+            $db = 'events';
+            $i = 0;
+
+            $conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
+
+            $fetch = "select * from details";
+
+            $temp = mysqli_query($conn, $fetch) or die("Record not found.");
+
+            while($row = mysqli_fetch_assoc($temp)&&$i<2) {
+                echo "Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
+                $i++;
+            }
+            echo "</table></div>"; 
+
+            mysqli_close($conn);
+
+                    echo '</p>
                 </div>
                     
 

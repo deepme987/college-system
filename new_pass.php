@@ -10,9 +10,8 @@
 	
 	<?php
 		include 'session.php';
-		echo"<h3>Change Password for ".$_SESSION['name']." </h3>";
+		echo"<h2 align='center'>Change Password for ".$_SESSION['name']." </h2>";
 	?>
-
 	<div class="tags">
 		<ul>
 			<li>Old Password: </li>
@@ -27,17 +26,20 @@
 		function disp() {
 
 			echo'<div class="container">
-				<form action="home.php?page=new_pass.php&update=true" method="POST">
-					<br><ul>
-					<li><input type="password" name="Old" value=""><br></li>
+				<form action="" method="POST">
+					<br><ul><li><input type="password" name="Old" value=""><br></li>
 					<li><input type="password" name="New" value=""><br></li>
-					<li><input type="submit" value="Update"></li>
+					<input name="update" type="submit" value="Update">
+					<input name="back" type="submit" value="Go Back"></ul>
 				</form> 
-				<a href="home.php?page=update.php" value="Back">Go Back</a>
 			</div>';
 		}
 
-		if (isset($_GET['update'])) {validate();}
+		if (isset($_POST['back'])) {
+			header('Location: home.php?page=update.php');
+		}
+
+		if (isset($_POST['update'])) {validate();}
 
 		function validate()
 		{

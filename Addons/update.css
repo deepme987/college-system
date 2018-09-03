@@ -9,7 +9,8 @@
 
 .container > form > input {
   border-spacing: 5px;
-  padding: 5px;
+  padding: 10px;
+  float: left;
 }
 
 div.tags > ul > li, div.container > form > ul > li {
@@ -20,4 +21,17 @@ div.tags > ul > li, div.container > form > ul > li {
 
 div.tags > ul, div.container > form > ul {
   list-style-type: none;
+}
+
+h2 {
+	text-align: center;
+}
+
+.l1 {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.l2 {
+  float: right;
 }

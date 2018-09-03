@@ -12,7 +12,7 @@
 	<?php
 		include 'session.php';
 	?>
-
+	<h2 align="center">Edit Profile</h2>
 	<div class="tags">
 		<ul>
 			<li>Smart-Card No: </li>
@@ -42,7 +42,7 @@
 			$row = mysqli_fetch_assoc($data);
 
 			echo'<div class="container">
-				<form action="home.php?page=update.php&update=true" method="POST">
+				<form action="" method="POST">
 					<br><ul>
 					<li>'.$row["UserId"].'</li>
 					<li>'.$row["RegNo"].'</li>
@@ -51,15 +51,19 @@
 					<li><span>'.$row["RollNo"].'</span><br></li>
 					<li><input type="number" name="MobNo" value="'.$row["MobNo"].'"><br></li>
 					<li><input type="text" name="Addr" value="'.$row["Addr"].'"><br></li>
-					<li><input type="submit" value="Update"></li></ul>
+					<input name="update" type="submit" value="Update">
+					<input name="pass" type="submit" value="Change Pass"></ul>
 				</form> 
-				<a href="home.php?page=new_pass.php">Change Password</a>
 			</div>';
 
 			mysqli_close($conn);
 		}
 
-		if (isset($_GET['update'])) {update();}
+		if (isset($_POST['pass'])) {
+			header('Location: home.php?page=new_pass.php');
+		}
+
+		if (isset($_POST['update'])) {update();}
 	
 		function update() {
 
