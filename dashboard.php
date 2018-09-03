@@ -9,7 +9,7 @@
 <body>
 
 	<?php
-		include 'session.php';	
+		// include 'session.php';
 		$user = 'student';
 		$pass = 'sakec';
 		$db = 'students';
@@ -68,8 +68,7 @@
                 </div>
                 <div class="events">
                     <p>Events:</p>
-                    <hr>
-                    <p>';
+                    <hr>';
 
             mysqli_close($conn);
             $user = 'student';
@@ -85,7 +84,7 @@
 
             while($row = mysqli_fetch_assoc($temp)) {
                 if($i<2){
-                echo "Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
+                echo "<br>Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
                 $i++;
                 }
                 else {

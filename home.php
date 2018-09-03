@@ -16,7 +16,13 @@
 
         <div class="rightheader">
             <ul class="mainddheader">
-                <li><a id="dropdown" href="#" onclick="#">Name        <i class="fa fa-angle-down"></i></a></li>
+                <li><a id="dropdown" href="#" onclick="#">
+                <?php 
+                    include 'session.php';
+                    echo $_SESSION['name'];
+                    // session_end
+                ?>
+                <i class="fa fa-angle-down"></i></a></li>
             </ul>
 
             <div id="ddblock" style="display:none">
