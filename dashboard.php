@@ -84,8 +84,13 @@
             $temp = mysqli_query($conn, $fetch) or die("Record not found.");
 
             while($row = mysqli_fetch_assoc($temp)) {
+                if($i<2){
                 echo "Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
                 $i++;
+                }
+                else {
+                    break;
+                }
             }
             echo "</table></div>"; 
 
