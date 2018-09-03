@@ -9,7 +9,7 @@
 <body>		
 	
 	<?php
-		include 'session.php';
+		// include 'session.php';
 		echo"<h2 align='center'>Change Password for ".$_SESSION['name']." </h2>";
 	?>
 	<div class="tags">

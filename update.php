@@ -10,7 +10,7 @@
 <body>		
 	
 	<?php
-		include 'session.php';
+		// include 'session.php';
 	?>
 	<h2 align="center">Edit Profile</h2>
 	<div class="tags">

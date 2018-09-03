@@ -9,7 +9,7 @@
 <body>
 
 	<?php
-		include 'session.php';	
+		// include 'session.php';	
 		$user = 'student';
 		$pass = 'sakec';
 		$db = 'students';
