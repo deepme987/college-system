@@ -7,6 +7,7 @@
 </head>
 <body>
 	<?php
+	echo "<h2>Attendance<h2>";
 	fetch();
 	function fetch() {
 		
@@ -28,60 +29,6 @@
 			echo "<tr><td>".$row["Fname"]." ".$row["Lname"]."</td><td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td><td>".$row["S1"]."</td><td>".$row["S1t"]."</td><td>".$row["S2"]."</td><td>".$row["S2t"]."</td><td>".$row["S3"]."</td><td>".$row["S3t"]."</td><td>".$row["S4"]."</td><td>".$row["S4t"]."</td><td>".$row["S5"]."</td><td>".$row["S5t"]."</td><td>".$row["Attended"]."</td><td>".$row["Total"]."</td><td>".$row["Percent"]."</td></tr>";
 		}
 		echo "</table></div>";
-
-		echo '<a href="home.php?page=attendance.php&totalupdate=true">Total+1</a>';
-		mysqli_close($conn);
-	}
-
-	if (isset($_GET['totalupdate'])) {total();}
-
-	function total()
-	{
-		$user = 'student';
-		$pass = 'sakec';
-		$db = 'students';
-
-		$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
-
-
-		$sql = "UPDATE `profile` SET S1t=S1t+1";
-
-		if (mysqli_query($conn, $sql)) {
-		}
-	
-		else {
-			echo "Error: ".mysqli_error($conn);
-		}
-
-		mysqli_close($conn);
-
-		header('refresh:0, url=http://localhost/Git/college-system/home.php?page=attendance.php');
-	}
-
-	if (isset($_GET['update'])) {update();}
-	
-	function update() {
-
-		$user = 'student';
-		$pass = 'sakec';
-		$db = 'students';
-
-		$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
-
-
-		$sql = "UPDATE `profile` SET MobNo=".$_POST['MobNo'].", Addr=\"".$_POST['Addr']."\" WHERE UserId=\"".$_SESSION['name']."\"";
-
-		if (mysqli_query($conn, $sql)) {
-			echo "Updated Profile, redirecting to home...";
-		}
-	
-		else {
-			echo "Error: ".mysqli_error($conn);
-		}
-
-		mysqli_close($conn);
-
-		header("Location: home.php?page=update.php");
 	}
 ?>
 </body>

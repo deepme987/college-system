@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2018 at 05:00 PM
+-- Generation Time: Sep 03, 2018 at 10:11 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -238,6 +238,13 @@ CREATE TABLE `pma__table_uiprefs` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
 
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'students', 'profile', '{\"sorted_col\":\"`UserId` ASC\"}', '2018-09-01 18:28:42');
+
 -- --------------------------------------------------------
 
 --
@@ -274,7 +281,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2018-09-01 15:00:13', '{\"Console\\/Mode\":\"collapse\"}');
+('root', '2018-09-03 08:10:53', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
@@ -484,18 +491,64 @@ CREATE TABLE `profile` (
   `RollNo` int(2) NOT NULL,
   `MobNo` bigint(10) NOT NULL,
   `Addr` varchar(50) NOT NULL,
-  `Pass` varchar(32) NOT NULL
+  `Pass` varchar(32) NOT NULL DEFAULT 'sakec',
+  `S1` int(2) NOT NULL DEFAULT '0',
+  `S1t` int(2) NOT NULL DEFAULT '0',
+  `S2` int(2) NOT NULL DEFAULT '0',
+  `S2t` int(2) NOT NULL DEFAULT '0',
+  `S3` int(2) NOT NULL DEFAULT '0',
+  `S3t` int(2) NOT NULL DEFAULT '0',
+  `S4` int(2) NOT NULL DEFAULT '0',
+  `S4t` int(2) NOT NULL DEFAULT '0',
+  `S5` int(2) DEFAULT '0',
+  `S5t` int(2) NOT NULL DEFAULT '0',
+  `Attended` int(2) AS (S1+S2+S3+S4+S5) VIRTUAL,
+  `Total` int(2) AS (S1t+S2t+S3t+S4t+S5t) VIRTUAL,
+  `Percent` decimal(4,2) AS ((S1+S2+S3+S4+S5)*100/(S1t+S2t+S3t+S4t+S5t)) VIRTUAL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `profile`
 --
 
-INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`, `RollNo`, `MobNo`, `Addr`, `Pass`) VALUES
-('0', 'Admin', 'Admin', 0, '0', 0, 0, 0, '0', 'root'),
-('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'Blablabla', 'new'),
-('M2016CM1072', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec'),
-('M2016CM1073', 'Deep', 'Mehta', 13024, 'TE', 3, 57, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec');
+INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`, `RollNo`, `MobNo`, `Addr`, `Pass`, `S1`, `S1t`, `S2`, `S2t`, `S3`, `S3t`, `S4`, `S4t`, `S5`, `S5t`) VALUES
+('0', 'Admin', 'Admin', 0, '0', 0, 0, 0, '0', 'root', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'Blablabla', 'sakec', 1, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1072', 'Deep', 'Mehta', 51422, 'TE', 2, 12, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1073', 'Deep', 'Mehta', 13024, 'TE', 3, 57, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1074', 'Deep', 'Mehta', 12312, 'TE', 1, 42, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1076', 'Deep', 'das', 12325, 'TE', 1, 31, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1077', 'Hello', 'World', 82421, 'TE', 1, 55, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
+('M2016CM1080', 'Deep', 'Mehta', 31235, 'TE', 1, 32, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable`
+--
+
+CREATE TABLE `timetable` (
+  `SrNo` int(1) NOT NULL,
+  `Time` varchar(15) NOT NULL,
+  `Monday` varchar(15) NOT NULL,
+  `Tuesday` varchar(15) NOT NULL,
+  `Wednesday` varchar(15) NOT NULL,
+  `Thrusday` varchar(15) NOT NULL,
+  `Friday` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `timetable`
+--
+
+INSERT INTO `timetable` (`SrNo`, `Time`, `Monday`, `Tuesday`, `Wednesday`, `Thrusday`, `Friday`) VALUES
+(1, '09:15 - 10:15', 'TCS', 'WD', 'MP', 'CN', 'MP'),
+(2, '10:15 - 11:15', 'DBMS', 'DBMS', 'DBMS', 'ABCD', 'TCS'),
+(3, '11:15 - 12:15', 'AA', 'AA', 'TCS(P)', 'ABCD', 'BCE'),
+(4, '01:00 - 02:00', 'AA', 'ABCD', 'BCE', 'ABCD', 'AA'),
+(5, '02:00 - 03:00', 'DBMS', 'ABCD', 'BCE', 'ABCD', 'CN'),
+(6, '03:00 - 04:00', 'BCE(P)', 'CN', 'WD', 'MP', 'ABCD'),
+(7, '04:00 - 05:00', 'BCE(P)', 'MP', 'WD', 'CN', 'ABCD');
 
 --
 -- Indexes for dumped tables
@@ -505,7 +558,8 @@ INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`,
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
-  ADD PRIMARY KEY (`UserId`);
+  ADD PRIMARY KEY (`UserId`),
+  ADD UNIQUE KEY `RegNo` (`RegNo`);
 --
 -- Database: `teacher`
 --

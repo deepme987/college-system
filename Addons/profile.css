@@ -6,6 +6,7 @@
     margin-left: auto;
     margin-right: auto;
 	border-collapse: collapse;
+	/*margin-top: 20px;*/
 }
 
 .table td, th {
