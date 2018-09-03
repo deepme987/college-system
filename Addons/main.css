@@ -32,7 +32,7 @@ body
     flex:70%;
     background-color:#D3D3D3;
     height:700px;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 .asideright
 {

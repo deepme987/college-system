@@ -84,7 +84,7 @@
 
             while($row = mysqli_fetch_assoc($temp)) {
                 if($i<2){
-                echo "<br>Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
+                echo "Name: <b>".$row["event_name"]."</b>  Event Id: <b>".$row["id"]."</b><br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"]."<br><br><hr>";
                 $i++;
                 }
                 else {
@@ -92,9 +92,7 @@
                 }
             }
             echo "</table></div>"; 
-
-
-                    echo '</p></div>';
+            echo '</p></div>';
 
 		mysqli_close($conn);
 	?>

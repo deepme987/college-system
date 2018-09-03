@@ -53,10 +53,10 @@
                 <ul class="nav">
                     <li><a class="btn <?php if($_GET["page"]==""){echo 'active';}?>" href="home.php">Dashboard</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="attendance.php"){echo 'active';}?>" href="home.php?page=attendance.php">Attendance record</a></li>
-                    <li><a class="btn <?php if($_GET["page"]=="assign.php"){echo 'active';}?>" href="#">Assignments</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="assign.php"){echo 'active';}?>" href="home.php?page=assign.php">Assignments</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="events.php"){echo 'active';}?>" href="home.php?page=events.php">Events in college</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="list.php"){echo 'active';}?>" href="home.php?page=list.php">Student List</a></li>
-                    <li><a class="btn <?php if($_GET["page"]=="tt.php"){echo 'active';}?>" href="home.php?page=timetable.php">Timetable</a></li>
+                    <li><a class="btn <?php if($_GET["page"]=="timetable.php"){echo 'active';}?>" href="home.php?page=timetable.php">Timetable</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="update.php"){echo 'active';}?>" href="home.php?page=update.php">My profile</a></li>
                 </ul>
             </div>
