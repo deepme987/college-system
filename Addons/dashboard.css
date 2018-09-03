@@ -3,11 +3,13 @@
     margin:auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: #ffff33;
     color:black;
     text-align:left;
-    width:90%;
+    width:95%;
     border-radius:20px;
+    padding:10px;
+    box-shadow:2px 2px 5px black;
 }
 .details ul
 {
@@ -18,19 +20,26 @@
 }
 .details ul li
 {
-    font-family:serif;
+    font-family:"Times new roman",serif;
     padding:5px;
     text-transform: uppercase;
-    font-style: oblique;
+    font-weight: 500;
 }
-.details p
+.details p,.attendance p,.notification p,.event p
 {
     margin-top:0;
-    margin-bottom:0;
+    margin-bottom:0px;
     padding:10 0 0 10;
     font-family:cursive;
-    font-style: italic;
-    font-weight: bold
+    font-weight:900;
+}
+.attendance p,.notification p,.event p
+{
+    margin-top:0;
+    margin-bottom:10px;
+    padding:10 0 0 10;
+    font-family:cursive;
+    font-weight:900;
 }
 hr
 {
@@ -42,13 +51,19 @@ hr
     float:left;
 }
 
-.attendance,.events
+.attendance,.event
 {
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding:0 0 10 0;
-    background-color: rgba(255,255,255,0.7);
+    background-color: #ffdb4d;
     color:black;
     text-align:left;
-    width:100%;
+    width:95%;
+    border-radius:20px;
+    padding:10px;
+    box-shadow:2px 2px 5px black;
 }
 .tattendance
 {
@@ -56,24 +71,19 @@ hr
     margin:10px;
     text-align: center;
 }
-.attendance p,.notification p,.events p
-{
-    margin-top:0;
-    margin-bottom:10px ;
-    padding:10 0 0 10;
-    font-family:cursive;
-    font-style: italic;
-    font-weight: bold
-}
 .tattendance tr th, .tattendance tr td
 {
     border: 1px solid black;
     font-family:serif;
-    font-style: oblique;
+    font-style:"Times new roman";
     padding:5px;
 }
-.events
+span
 {
-    padding:0;
+    font-family: monospace;
+    font-size: 15px;
 }
-
+.details:hover,.notification:hover,.attendance:hover,.event:hover
+{
+    box-shadow:2px 2px 10px black;
+}
