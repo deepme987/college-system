@@ -81,8 +81,7 @@
             $row = mysqli_fetch_assoc($data);
 
 
-            // $day = "\"".date('l')."\"";
-            $day = "Tuesday";
+            $day = date('l');
 
             echo '<div class="asideright">
                 <div class="iasideright">

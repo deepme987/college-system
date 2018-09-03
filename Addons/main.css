@@ -1,8 +1,9 @@
 body
 {
     margin:0;
-    background-image: url(sublime.jpg);
+    background-image: url(website-design-background-1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .header
 {
