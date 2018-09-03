@@ -1,7 +1,7 @@
 <html>
 <title>Home</title>
 <head>
-    <link rel="stylesheet" type="text/css" href="Addons/home.css">
+    <link rel="stylesheet" type="text/css" href="Addons/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -80,13 +80,17 @@
 
             $row = mysqli_fetch_assoc($data);
 
-
             $day = date('l');
 
             echo '<div class="asideright">
                 <div class="iasideright">
-                        <p class="tthead" align="center">Time Table for <br>'.$day.' </p>
-                        <table class="asiderighttable" >
+                        <p class="tthead" align="center">Time Table for <br>'.$day.' </p>';
+
+                        if ($day=="Sunday" || $day=="Saturday") {
+                            echo '<p class="tthead" align="center">Holiday<p>';
+                        }
+                        else {
+                            echo'<table class="asiderighttable" >
                             <tr>
                                 <th>Time</th>
                                 <th>Subject</th>
@@ -132,9 +136,9 @@
                                 <td>4.00-5.00</td>
                                 <td>'.$row[$day].'</td>
                             </tr>
-                    </table>
-                </div>
-            </div>';
+                    </table>';
+                }
+                    echo '</div></div>';
             mysqli_close($conn);
         ?>
 

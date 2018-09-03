@@ -11,6 +11,7 @@
 			exit("Not enough privilege.");
 		}
 	?>
+	<h2>Add Details</h2>
 	<div class="form">
 		<form action="" method="POST">
 			<br>

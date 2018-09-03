@@ -3,15 +3,17 @@ body
     margin:0;
     background-image: url(website-design-background-1.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center top;
 }
 .header
 {
+    border-bottom:1px solid white;
     display:flex;
     width:100%;
     height:15%;
     /*background-color: red;*/
     justify-content: center;
+    box-shadow:2px 2px 2px black;
 }
 .flex-container
 {
@@ -53,6 +55,7 @@ body
     margin:20 0 0 10px;
     font-family: cursive;
     font-size: 40px;
+    color: white;
 }
 .rightheader
 {
@@ -196,7 +199,8 @@ hr
 }
 
 .tthead {
-    color: white;
+    color: yellow;
+    font-family: cursive;
 }
 
 .asiderighttable
