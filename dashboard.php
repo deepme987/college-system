@@ -71,30 +71,26 @@
                     <hr>
                     <p>';
 
+            mysqli_close($conn);
             $user = 'student';
             $pass = 'sakec';
-            $db = 'events';
+            $db = 'students';
             $i = 0;
 
             $conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-            $fetch = "select * from details";
+            $fetch = "select * from events";
 
             $temp = mysqli_query($conn, $fetch) or die("Record not found.");
 
-            while($row = mysqli_fetch_assoc($temp)&&$i<2) {
+            while($row = mysqli_fetch_assoc($temp)) {
                 echo "Name: ".$row["event_name"]."<hr>Event Id: ".$row["id"]."<br>Date: ".$row["date"]."    Time".$row["time"]."    Venue: ".$row["venue"];
                 $i++;
             }
             echo "</table></div>"; 
 
-            mysqli_close($conn);
 
-                    echo '</p>
-                </div>
-                    
-
-            </div>';
+                    echo '</p></div>';
 
 		mysqli_close($conn);
 	?>
