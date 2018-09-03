@@ -29,8 +29,8 @@
 				<form action="" method="POST">
 					<br><ul><li><input type="password" name="Old" value=""><br></li>
 					<li><input type="password" name="New" value=""><br></li>
-					<li><input name="update" type="submit" value="Update"></li>
-					<li><input name="back" type="submit" value="Go Back"></li></ul>
+					<input name="update" type="submit" value="Update">
+					<input name="back" type="submit" value="Go Back"></ul>
 				</form> 
 			</div>';
 		}

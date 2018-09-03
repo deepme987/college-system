@@ -51,8 +51,8 @@
 					<li><span>'.$row["RollNo"].'</span><br></li>
 					<li><input type="number" name="MobNo" value="'.$row["MobNo"].'"><br></li>
 					<li><input type="text" name="Addr" value="'.$row["Addr"].'"><br></li>
-					<li><input name="update" type="submit" value="Update"></li>
-					<li><input name="pass" type="submit" value="Change Pass"></li></ul>
+					<input name="update" type="submit" value="Update">
+					<input name="pass" type="submit" value="Change Pass"></ul>
 				</form> 
 			</div>';
 
