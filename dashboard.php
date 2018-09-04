@@ -63,14 +63,33 @@
                 </div>
                 <div class="notification">
                     <p>Assignment:</p>
-                    <hr>
-                    <p></p>
+                    <hr>';
+            $user = 'student';
+            $pass = 'sakec';
+            $db = 'students';
+            $i = 0;
+
+            $conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
+
+            $fetch = "select * from assign";
+
+            $temp = mysqli_query($conn, $fetch) or die("Record not found.");
+
+            while($row = mysqli_fetch_assoc($temp)) {
+                if($i<2){
+                echo "<span><b>Assignment No: </b>"   .$row["no."]."<br><b>Subject: </b>".$row["subject"]."<br><b>Assigned Date: </b> ".$row["assigned"]." <br><b>Submission Date: </b>".$row["submission"]."<br><br></span>";
+                $i++;
+                }
+                else {
+                    break;
+                }
+            }
+      		  mysqli_close($conn);
+                    echo '<p></p>
                 </div>
                 <div class="event">
                     <p>Events:</p>
                     <hr>';
-
-            mysqli_close($conn);
             $user = 'student';
             $pass = 'sakec';
             $db = 'students';
@@ -84,7 +103,7 @@
 
             while($row = mysqli_fetch_assoc($temp)) {
                 if($i<2){
-                echo "<span><b>Name:</b>"   .$row["event_name"]."<br><b>Event Id:</b>".$row["id"]."<br><b>Date:</b> ".$row["date"]." <br><b>Time:</b>".$row["time"]."<br><b>Venue:</b>".$row["venue"]."<br><br></span>";
+                echo "<span><b>Name: </b>"   .$row["event_name"]."<br><b>Event Id: </b>".$row["id"]."<br><b>Date: </b> ".$row["date"]." <br><b>Time: </b>".$row["time"]."<br><b>Venue: </b>".$row["venue"]."<br><br></span>";
                 $i++;
                 }
                 else {
