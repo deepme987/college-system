@@ -23,7 +23,7 @@ body
 .asideleft
 {
     flex:15%;
-    min-height:650px;
+    min-height:894px;
     background-color:#333;
     
 }
@@ -36,7 +36,7 @@ body
 }
 .asideright
 {
-    min-height:650px;
+    /*min-height:894px;*/
     flex:15%;
     background-color: #333;
 }
