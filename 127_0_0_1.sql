@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2018 at 03:43 PM
+-- Generation Time: Sep 04, 2018 at 06:24 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -239,7 +239,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"assignments\",\"table\":\"details\"},{\"db\":\"events\",\"table\":\"details\"},{\"db\":\"students\",\"table\":\"profile\"},{\"db\":\"students\",\"table\":\"timetable\"}]');
+('root', '[{\"db\":\"students\",\"table\":\"events\"},{\"db\":\"students\",\"table\":\"profile\"},{\"db\":\"assignments\",\"table\":\"details\"},{\"db\":\"events\",\"table\":\"details\"},{\"db\":\"students\",\"table\":\"timetable\"}]');
 
 -- --------------------------------------------------------
 
@@ -353,7 +353,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2018-09-03 13:40:47', '{\"Console\\/Mode\":\"show\"}');
+('root', '2018-09-04 16:23:55', '{\"Console\\/Mode\":\"show\"}');
 
 -- --------------------------------------------------------
 
@@ -550,6 +550,50 @@ USE `students`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `assign`
+--
+
+CREATE TABLE `assign` (
+  `assigned` date NOT NULL,
+  `submission` date NOT NULL,
+  `subject` varchar(10) COLLATE utf8_bin NOT NULL,
+  `no.` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `assign`
+--
+
+INSERT INTO `assign` (`assigned`, `submission`, `subject`, `no.`) VALUES
+('2018-08-10', '2018-09-10', 'CN', 1),
+('2018-09-01', '2018-09-30', 'MP', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(5) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `venue` varchar(25) COLLATE utf8_bin NOT NULL,
+  `event_name` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `date`, `time`, `venue`, `event_name`) VALUES
+(1, '2018-09-01', '09:00:00', 'sakec', 'workshop on html'),
+(4, '2018-10-02', '10:00:00', 'd.j sanghvi', 'workshop on python'),
+(5, '2018-10-01', '09:00:00', 'sakec', 'workshop on webdevelopment');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `profile`
 --
 
@@ -585,7 +629,22 @@ CREATE TABLE `profile` (
 
 INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`, `RollNo`, `MobNo`, `Addr`, `Pass`, `S1`, `S1t`, `S2`, `S2t`, `S3`, `S3t`, `S4`, `S4t`, `S5`, `S5t`) VALUES
 ('0', 'Admin', 'Admin', 0, '0', 0, 0, 0, '0', 'root', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
-('C2016CM1027', 'mithil', 'jain ', 12935, 'TE', 4, 57, 9619020626, 'blabla', '12935', 5, 5, 1, 5, 7, 10, 2, 2, 8, 10),
+('C2016CM1027', 'mithil', 'jain ', 12935, 'TE', 4, 57, 7977383514, 'albalb', '12935', 5, 5, 1, 5, 7, 10, 2, 2, 8, 10),
+('C2016CM1028', 'mithil', 'jain', 42115, 'TE', 2, 13, 2314215, 'FAS', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1029', 'mithil', 'jain', 35235, 'te', 1, 32, 41235, '123', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1030', 'mithil', 'jain', 15256, 'te', 2, 61, 4215, '142', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1031', 'mithil', 'jain', 71532, 'TE', 5, 12, 51215, '142', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1035', 'mithil', 'jain', 62351, 'te', 3, 24, 41251, '214', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1036', 'mithil', 'jain', 15225, 'TE', 3, 14, 214, '512', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1040', 'Deep', 'Mehta', 25184, 'TE', 1, 60, 983529, '521', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1041', 'mithil', 'jain', 12535, 'TE', 5, 24, 253, '412', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1046', 'Mithil', 'Jain', 21875, 'TE', 5, 60, 981592, 'NFJabs', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1047', 'Mithil', 'Jain', 21475, 'TE', 5, 60, 981592, 'NFJabs', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1048', 'Mithil', 'Jain', 21675, 'TE', 5, 60, 981592, 'NFJabs', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1049', 'Mithil', 'Jain', 21575, 'TE', 5, 60, 981592, 'NFJabs', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1050', 'Mithil', 'Jain', 21775, 'TE', 5, 60, 981592, 'NFJabs', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM1060', 'Mith', 'gaehj', 12625, 'TE', 7, 78, 98, 'kfsan', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+('C2016CM5028', 'dfbf', 'gwfgvdf', 12468, 'TE', 1, 53, 251, 'dsg', 'sakec', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 ('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'Blablabla', 'sakec', 1, 27, 0, 0, 0, 0, 0, 0, 0, 0),
 ('M2016CM1072', 'Deep', 'Mehta', 51422, 'TE', 2, 12, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
 ('M2016CM1073', 'Deep', 'Mehta', 13024, 'TE', 3, 57, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 27, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -625,6 +684,12 @@ INSERT INTO `timetable` (`SrNo`, `Time`, `Monday`, `Tuesday`, `Wednesday`, `Thru
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `profile`
