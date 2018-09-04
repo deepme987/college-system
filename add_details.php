@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Add Details</title>
-	<link rel="stylesheet" href="Addons/profile.css">
+	<link rel="stylesheet" href="Addons/attendance.css">
+    
 </head>
 <body>		
 	<?php
@@ -11,7 +12,7 @@
 			exit("Not enough privilege.");
 		}
 	?>
-	<h2>Add Details</h2>
+	<p class="patten">Add Details</p>
 	<div class="form">
         <div class="formsticky">
 		<form action="" method="POST">

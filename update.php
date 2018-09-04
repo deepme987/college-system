@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="refresh" content="2"> -->
-	<link rel="stylesheet" href="Addons/update.css">
+	<link rel="stylesheet" href="Addons/updateNnewpass.css">
 	<title>Add Details</title>
 </head>
 <body>		
@@ -12,7 +12,9 @@
 	<?php
 		// include 'session.php';
 	?>
-	<h2 align="center">Edit Profile</h2>
+    <p class="pupdate">Edit Profile</p>
+    <hr class=hratten>
+    <div class="update">
 	<div class="tags">
 		<ul>
 			<li>Smart-Card No: </li>
@@ -43,7 +45,7 @@
 
 			echo'<div class="container">
 				<form action="" method="POST">
-					<br><ul>
+					<br><ul class=\"ulright\">
 					<li>'.$row["UserId"].'</li>
 					<li>'.$row["RegNo"].'</li>
 					<li><span>'.$row["Fname"].' '.$row["Lname"].'</span><br></li>
@@ -55,7 +57,6 @@
 					<input name="pass" type="submit" value="Change Pass"></ul>
 				</form> 
 			</div>';
-
 			mysqli_close($conn);
 		}
 
@@ -91,6 +92,7 @@
 		}
 		
 		?>
+        </div>
 
 </body>
 </html>

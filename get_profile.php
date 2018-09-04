@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="refresh" content="2"> -->
 	<title>Student List</title>
-	<link rel="stylesheet" href="Addons/profile.css">
+	<link rel="stylesheet" href="Addons/attendance.css">
 </head>
 <body>
-	<h2>Student List</h2>
+	<p class="patten">Student List</p>
+    <hr class="hratten">
 	<?php
 
 		$user = 'student';
@@ -22,7 +23,7 @@
 
 		$div = mysqli_fetch_assoc($temp);
 
-		echo "<h3>TE ".$div['Division']."</h3>";
+		echo "<p class=\"patten\">TE ".$div['Division']."</p>";
 		$get_all = "select Fname, Lname, Class, Division, RollNo from profile where UserId!=\"0\" and Division=".$div['Division']." order by RollNo";
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");

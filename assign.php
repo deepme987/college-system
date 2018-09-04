@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Assignment</title>
-	<link rel="stylesheet" href="Addons/events.css">
-    <link rel="stylesheet" href="Addons/test.css">
+	<link rel="stylesheet" href="Addons/attendance.css">
 </head>
 <body>
-	<h2>Assignment List</h2>
+	<p class="patten">Assignment List</p>
+    <hr class="hratten">
 	<?php
 
 		$user = 'student';

@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Time Table</title>
-	<link rel="stylesheet" href="Addons/profile.css">
+	<link rel="stylesheet" href="Addons/attendance.css">
 </head>
 <body>
-	<h2>Time Table for TE4</h2>
+	<p class="patten">Time Table for TE4</p>
+    <hr class="hratten">
 	<?php
 
 		$user = 'student';

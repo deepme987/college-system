@@ -1,7 +1,6 @@
 body
 {
     margin:0;
-    background-image: url(website-design-background-1.jpg);
     background-repeat: no-repeat;
     background-position: center top;
 }
@@ -24,7 +23,7 @@ body
 .asideleft
 {
     flex:15%;
-    /*height:700px;*/
+    min-height:650px;
     background-color:#333;
     
 }
@@ -32,12 +31,12 @@ body
 {
     flex:70%;
     background-color:#D3D3D3;
-    min-height:600px;
+    min-height:650px;
     /*overflow: scroll;*/
 }
 .asideright
 {
-    /*height:700px;*/
+    min-height:650px;
     flex:15%;
     background-color: #333;
 }

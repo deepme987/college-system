@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="refresh" content="2"> -->
 	<title>Student List</title>
-	<link rel="stylesheet" href="Addons/events.css">
-    	<link rel="stylesheet" href="Addons/profile.css">
+	<link rel="stylesheet" href="Addons/attendance.css">
 
 </head>
 <body>
-	<h2>Event List</h2>
+	<p class="patten">Event List</p>
+    <hr class="hratten">
 	<?php
 
 		$user = 'student';

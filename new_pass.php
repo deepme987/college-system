@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta http-equiv="refresh" content="2"> -->
-	<link rel="stylesheet" href="Addons/update.css">
+	<link rel="stylesheet" href="Addons/updateNnewpass.css">
 	<title>Edit Profile - Password</title>
 </head>
 <body>		
 	
 	<?php
 		// include 'session.php';
-		echo"<h2 align='center'>Change Password for ".$_SESSION['name']." </h2>";
+		echo"<p class=\"pupdate\">Change Password for ".$_SESSION['name']." </p>";
 	?>
+    <div class="newpass">
 	<div class="tags">
 		<ul>
 			<li>Old Password: </li>
@@ -90,6 +91,6 @@
 		}
 		
 	?>
-
+        </div>
 </body>
 </html>
