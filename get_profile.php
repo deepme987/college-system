@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="Addons/attendance.css">
 </head>
 <body>
-	<p class="patten">Student List</p>
-    <hr class="hratten">
+	<p class="patten">Student List-TE
+    
 	<?php
 
 		$user = 'student';
@@ -23,7 +23,7 @@
 
 		$div = mysqli_fetch_assoc($temp);
 
-		echo "<p class=\"patten\">TE ".$div['Division']."</p>";
+		echo "".$div['Division']."<hr class=\"hratten\"></p>";
 		$get_all = "select Fname, Lname, Class, Division, RollNo from profile where UserId!=\"0\" and Division=".$div['Division']." order by RollNo";
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");
