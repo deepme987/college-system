@@ -10,6 +10,7 @@
 			window.location.assign("index.php");
 		}
 	</script> 
+	<link rel="shortcut icon" href="Addons/title_img.ico" />
 </head>
 <body>
 
