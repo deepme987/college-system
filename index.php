@@ -1,10 +1,13 @@
 <html>
 <title>Login</title>
 <head>
-	<link rel="stylesheet" type="text/css" href="Addons/login.css">
+	<link rel="stylesheet" type="text/css" href="Addons/index.css">
 	<script>
 		function forgot(){
 			window.alert("Mail ur details at peacock@gmail.com");
+		}
+		function reset() {
+			window.location.assign("index.php");
 		}
 	</script> 
 </head>
@@ -22,18 +25,18 @@
 	  
 		<div class="form">
 	  
-			<form action="index.php?login=true" method="POST">
+			<form action="" method="POST">
 				<p class="formp">Username</p>
 				<input name="id" type=text placeholder="Enter username">
 				<p class="formp">Password</p>
 				<input name="pass" type=password placeholder="Enter password"><br><br>
-				<input type=submit value="Login"><br>
-				<input type=button value="Reset">
+				<input type=submit name="login" value="Login"><br>
+				<input type=button value="Reset" onclick="reset()">
 				<a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
 			</form>
 	  	
 			<?php
-				if (isset($_GET['login'])&&$_POST['id']!="") {
+				if (isset($_POST['login'])&&$_POST['id']!="") {
 					validate();
 				}
 
@@ -57,7 +60,7 @@
 					}
 
 					else {
-						echo "<div class=\"form\"><p>Wrong Id or Password</p></div>";
+						echo '<p class="error">Wrong Id or Password</p>';
 					}
 				}
 
