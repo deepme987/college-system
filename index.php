@@ -6,6 +6,9 @@
 		function forgot(){
 			window.alert("Mail ur details at peacock@gmail.com");
 		}
+		function reset() {
+			window.location.assign("index.php");
+		}
 	</script> 
 </head>
 <body>
@@ -28,7 +31,7 @@
 				<p class="formp">Password</p>
 				<input name="pass" type=password placeholder="Enter password"><br><br>
 				<input type=submit name="login" value="Login"><br>
-				<input type=button value="Reset" onclick="index.php">
+				<input type=button value="Reset" onclick="reset()">
 				<a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
 			</form>
 	  	
