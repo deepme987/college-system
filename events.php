@@ -25,7 +25,7 @@
 
         echo "<div class=\"table\"><table><tr><th>Event Id</th><th>Date</th><th>Time</th><th>venue</th><th>Event Name</th>";
 		while($row = mysqli_fetch_assoc($temp)) {
-			echo "<tr><td>".$row["id"]."</td><td>".$row["date"]."</td><td>".$row["time"]."</td><td>".$row["venue"]."</td><td>".$row["event_name"]."</td></tr>";
+			echo "<tr><td>".$row["id"]."</td><td>".$row["date"]."</td><td>".$row["time"]."</td><td>".$row["venue"]."</td><td><a style=\"text-decoration:none;\" href='#' target='_blank'>".$row["event_name"]."</td></tr>";
 		}
         echo "</table></div>"; 
 

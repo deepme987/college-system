@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -22,9 +22,9 @@
 
 		$temp = mysqli_query($conn, $fetch) or die("Record not found.");
 
-        echo "<div class=\"table\"><table><tr><th>Assignment No</th><th>Subject</th><th>Assigned Date</th><th>Submission Date</th>";
+        echo "<div class=\"table\"><table><tr><th>Assignment No</th><th>Subject</th><th>Assigned Date</th><th>Submission Date</th><th>Download</th>";
 		while($row = mysqli_fetch_assoc($temp)) {
-			echo "<tr><td>".$row["no."]."</td><td>".$row["subject"]."</td><td>".$row["assigned"]."</td><td>".$row["submission"]."</td></tr>";
+			echo "<tr><td>".$row["no."]."</td><td>".$row["subject"]."</td><td>".$row["assigned"]."</td><td>".$row["submission"]."</td><td><a href='https://drive.google.com/open?id=1Pup4middItN4jKfyfErqoFl_QbthR1cDwaJRV3ckaI8' style='text-decoration:none;' target='_blank'>"."Download</a></td></tr>";
 		}
         echo "</table></div>"; 
 
