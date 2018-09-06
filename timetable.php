@@ -20,10 +20,10 @@
 		
 		$data = mysqli_query($conn, $get_all) or die("No records found.");
 
-		echo "<div class=\"table\"><table><tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thrusday</th><th>Friday</th>";
+		echo "<div class=\"table\"><table><tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th>";
 
 		while($row = mysqli_fetch_assoc($data)) {
-			echo "<tr><td>".$row["Time"]."</td><td>".$row["Monday"]."</td><td>".$row["Tuesday"]."</td><td>".$row["Wednesday"]."</td><td>".$row["Thrusday"]."</td><td>".$row["Friday"]."</td></tr>";
+			echo "<tr><td>".$row["Time"]."</td><td>".$row["Monday"]."</td><td>".$row["Tuesday"]."</td><td>".$row["Wednesday"]."</td><td>".$row["Thursday"]."</td><td>".$row["Friday"]."</td></tr>";
 		}
 		echo "</table></div>"; 
 
