@@ -233,5 +233,25 @@ table,th,td
     {
         min-height:100px;
     }
+    .maincontent
+    {
+        min-height:100px;
+    }
+    *//*----------------------------------------------------------header---------------------------------------------------------------------*/
+
+    .leftheader
+    {
+        flex:70%;
+    }
+    .rightheader
+    {
+        flex:30%;
+        padding:30px;
+    }
+    .mainddheader li
+    {
+        font-size:20px;
+        padding:10px;
+    } 
 }
 
