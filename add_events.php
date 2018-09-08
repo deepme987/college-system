@@ -33,7 +33,6 @@
 			
 			function add() {
 
-				echo $_POST['time'];
 				$user = 'teacher';
 				$pass = 'root';
 				$db = 'students';
@@ -41,7 +40,7 @@
 				$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
 
-				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`) VALUES (".$_POST['EventId'].",".$_POST['date'].",".$_POST['time'].":00,\"".$_POST['venue']."\",\"".$_POST['EventName']."\")";
+				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`) VALUES (".$_POST['EventId'].",".$_POST['date'].",\"".$_POST['time'].":00\",\"".$_POST['venue']."\",\"".$_POST['EventName']."\")";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "Added details, refreshing data...";
