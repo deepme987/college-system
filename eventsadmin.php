@@ -18,11 +18,11 @@
         <div class="formsticky">
 		<form action="" method="POST">
 			<br>
-			<input type="text" name="UserId" placeholder="eventid">
-			<input type="date" name="Fname" placeholder="date">
-			<input type="time" name="Lname" placeholder="time">
-			<input type="number" name="RegNo" placeholder="venue">
-			<input type="text" name="Class" placeholder="eventname">
+			<input type="number" name="id" placeholder="eventid">
+			<input type="date" name="date" placeholder="date">
+			<input type="time" name="time" placeholder="time">
+			<input type="number" name="venue" placeholder="venue">
+			<input type="text" name="event_name" placeholder="eventname">
 			<input type="submit" name="confirm" id="confirm" value="Add Values!">
 		</form> 
         </div>
@@ -39,7 +39,7 @@
 
 				$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
-				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`) VALUES (\"".$_POST['UserId']."\",\"".$_POST['Fname']."\",\"".$_POST['Lname']."\",".$_POST['RegNo'].",\"".$_POST['Class']."\")";
+				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`) VALUES (\"".$_POST['id']."\",\"".$_POST['date']."\",\"".$_POST['time']."\",".$_POST['venue'].",\"".$_POST['event_name']."\")";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "Added details, refreshing data...";
