@@ -13,16 +13,16 @@
 			exit("Not enough privilege.");
 		}
 	?>
-	<p EventName="patten">Add Details</p>
-	<div EventName="form">
-        <div EventName="formsticky">
+	<p class="patten">Add Details</p>
+	<div class="form">
+        <div class="formsticky">
 		<form action="" method="POST">
 			<br>
 			<input type="number" name="EventId" placeholder="eventid">
 			<input type="date" name="date" placeholder="date">
 			<input type="time" name="time" placeholder="time">
 			<input type="text" name="venue" placeholder="venue">
-			<input type="text" name="EventName" placeholder="eventname">
+			<input type="text" name="EventName" placeholder="class">
 			<input type="submit" name="confirm" id="confirm" value="Add Values!">
 		</form> 
         </div>
@@ -52,7 +52,32 @@
 				mysqli_close($conn);
 
 				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=events.php");
+
+				// include 'check_events.php';
 			}
 				
 		?>
+
+		<?php
+
+			$user = 'student';
+			$pass = 'sakec';
+			$db = 'students';
+
+			$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
+	        
+	        $date = date("Y-m-d");
+			$fetch = 'select * from events where date>="'.$date.'" order by date';
+
+			$temp = mysqli_query($conn, $fetch) or die("Record not found.");
+
+	        echo "<div class=\"table\"><table><tr><th>Event Id</th><th>Date</th><th>Time</th><th>venue</th><th>Event Name</th>";
+			while($row = mysqli_fetch_assoc($temp)) {
+				echo "<tr><td>".$row["id"]."</td><td>".$row["date"]."</td><td>".$row["time"]."</td><td>".$row["venue"]."</td><td><a style=\"text-decoration:none;\" href='#' target='_blank'>".$row["event_name"]."</td></tr>";
+			}
+	        echo "</table></div>"; 
+
+			mysqli_close($conn);
+		
+	?>
 	</div>
