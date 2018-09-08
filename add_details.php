@@ -54,7 +54,7 @@
 
 				mysqli_close($conn);
 
-//				header("refresh:3; url=http://localhost/Git/college-system/home.php?page=list.php");
+				header("refresh:3; url=http://localhost/college-system/home.php?page=list.php");
 			}
 				
 		?>
