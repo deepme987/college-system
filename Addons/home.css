@@ -229,5 +229,9 @@ table,th,td
     {
         flex-direction:column;
     }
+    .asideleft
+    {
+        min-height:100px;
+    }
 }
 
