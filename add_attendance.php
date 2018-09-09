@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Attendance</title>
-	<link rel="stylesheet" href="Addons/add_attendance.css">
-    <!-- <link rel="stylesheet" href="Addons/addattendance.css"> -->
+	<link rel="stylesheet" href="Addons/attendance.css">
+    <link rel="stylesheet" href="Addons/addattendance.css">
 </head>
 <body>
     <p class="patten">Add Attendance</p>
