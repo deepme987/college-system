@@ -34,7 +34,7 @@
 				$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
 
 
-				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`,`link`) VALUES (".$_POST['EventId'].",".$_POST['date'].",\"".$_POST['time'].":00\",\"".$_POST['venue']."\",\"".$_POST['EventName']."\",\"".$_POST['link  ']."\")";
+				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`,`link`) VALUES (".$_POST['EventId'].",".$_POST['date'].",\"".$_POST['time'].":00\",\"".$_POST['venue']."\",\"".$_POST['EventName']."\",\"".$_POST['link']."\")";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "Added details, refreshing data...";
@@ -65,11 +65,11 @@
 
 		$row = mysqli_fetch_assoc($data);
 
-		echo "<div class=\"table\"><table><tr><th>Name</th><th>Class-Div-Roll</th><th>MP</th><th>MP-T</th><th>CN</th><th>CN-T</th><th>AOS</th><th>AOS-T</th><th>DBMS</th><th>DBMS-T</th><th>TCS</th><th>TCS-T</th><th>Attended</th><th>Total</th><th>Percentage</th></tr>";
+		echo "<div class=\"table\"><table><tr><th>Name</th><th>Class-Div-Roll</th><th>MP</th><th>MP-T</th><th>CN</th><th>CN-T</th><th>AOS</th><th>AOS-T</th><th>DBMS</th><th>DBMS-T</th><th>TCS</th><th>TCS-T</th><th>Attended</th><th>Total</th><th>Percentage</th><th>Update</th></tr>";
 
 		while($row = mysqli_fetch_assoc($data)) {
 			echo
-                "<tr>
+                "<tr><form action='' method=POST>
                 <td>".$row["Fname"]." ".$row["Lname"]."</td>
                 <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
                 <td><input type='number' name='EventId' placeholder='".$row["S1"]."'></td>
@@ -85,7 +85,8 @@
                 <td>".$row["Attended"]."</td>
                 <td>".$row["Total"]."</td>
                 <td>".$row["Percent"]."</td>
-                </tr>";
+            	<td><input type='submit' name='submit' placeholder='Update' style='width:80px'></td>
+                </form></tr>";
 		}
 		echo "</table></div>";
 	}
