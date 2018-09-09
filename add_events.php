@@ -14,6 +14,7 @@
 		}
 	?>
 	<p class="patten">Add Details</p>
+    <hr class="hratten">
 	<div class="form">
         <div class="formsticky">
 		<form action="" method="POST">
