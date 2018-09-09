@@ -10,23 +10,21 @@
     <p class="patten">Add Attendance</p>
     <hr class="hratten">
     <?php
-<<<<<<< HEAD
-        if (isset($_POST['confirm'])) {add();}
+         if (isset($_GET['UserId'])) {update();}
 			
-        function add() {
+        function update() {
 
 				$user = 'teacher';
 				$pass = 'root';
 				$db = 'students';
 
 				$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
-
-
-				$sql = "INSERT INTO `events`(`id`, `date`, `time`, `venue`, `event_name`,`link`) VALUES (".$_POST['EventId'].",".$_POST['date'].",\"".$_POST['time'].":00\",\"".$_POST['venue']."\",\"".$_POST['EventName']."\",\"".$_POST['link']."\")";
+		
+				$sql = "UPDATE `profile` SET `S1`=".$_POST[$_GET['UserId'].'S1'].",`S1t`=".$_POST[$_GET['UserId'].'S1t'].",`S2`=".$_POST[$_GET['UserId'].'S2'].",`S2t`=".$_POST[$_GET['UserId'].'S2t'].",`S3`=".$_POST[$_GET['UserId'].'S3'].",`S3t`=".$_POST[$_GET['UserId'].'S3t'].",`S4`=".$_POST[$_GET['UserId'].'S4'].",`S4t`=".$_POST[$_GET['UserId'].'S4t'].",`S5`=".$_POST[$_GET['UserId'].'S5'].",`S5t`=".$_POST[$_GET['UserId'].'S5t']." WHERE UserId=\"".$_GET['UserId']."\"";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "Added details, refreshing data...";
-                    header("refresh:3;url=http://localhost:8080/college-system/home.php?page=events.php");
+                    header("refresh:3;url=http://localhost/Git/college-system/home.php?page=attendance.php");
 				}
 				else {
 					echo "Error: ".mysqli_error($conn);
@@ -38,8 +36,7 @@
 		?>
     </div>
     <?php
-=======
->>>>>>> 36a6c84f0742019375af65d3b1bed66574dcfb57
+
 	fetch();
 	function fetch() {
 		
@@ -59,27 +56,27 @@
 
 		while($row = mysqli_fetch_assoc($data)) {
 			echo
-                "<tr><form action='' method=POST>
+                "<tr><form action='home.php?page=attendance.php&UserId=".$row['UserId']."' method=POST>
                 <td>".$row["Fname"]." ".$row["Lname"]."</td>
                 <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
-                <td><input type='number' name='EventId' placeholder='".$row["S1"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S1t"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S2"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S2t"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S3"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S3t"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S4"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S4t"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S5"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S5t"]." '></td>
+                <td><input type='number' name='".$row['UserId']."S1' value='".$row["S1"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S1t' value='".$row["S1t"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S2' value='".$row["S2"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S2t' value='".$row["S2t"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S3' value='".$row["S3"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S3t' value='".$row["S3t"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S4' value='".$row["S4"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S4t' value='".$row["S4t"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S5' value='".$row["S5"]."'></td>
+                <td><input type='number' name='".$row['UserId']."S5t' value='".$row["S5t"]."'></td>
                 <td>".$row["Attended"]."</td>
                 <td>".$row["Total"]."</td>
                 <td>".$row["Percent"]."</td>
-            	<td><input type='submit' name='submit' placeholder='Update' style='width:80px'></td>
+            	<td><input type='submit' name='".$row['UserId']."submit' placeholder='Update' style='width:80px'></td>
                 </form></tr>";
 		}
 		echo "</table></div>";
 	}
-?>
+	?>
 </body>
 </html>

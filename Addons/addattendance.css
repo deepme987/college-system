@@ -2,13 +2,6 @@
 {
     color:black;
 }
-<<<<<<< HEAD
-
 input {
-	width: 35px;
-=======
-input[type=number]
-{
-    width:40px;
->>>>>>> 36a6c84f0742019375af65d3b1bed66574dcfb57
+    width: 35px;
 }
