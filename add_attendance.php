@@ -7,22 +7,10 @@
     <link rel="stylesheet" href="Addons/addattendance.css">
 </head>
 <body>
-    <div class="form">
-        <div class="formsticky">
-		<form action="" method="POST">
-			<br>
-			<input type="number" name="EventId" placeholder="eventid">
-			<input type="date" name="date" placeholder="date">
-			<input type="time" name="time" placeholder="time">
-			<input type="text" name="venue" placeholder="venue">
-			<input type="text" name="EventName" placeholder="eventname">
-            <input type="text" name="link" placeholder="link">
-			<input type="submit" name="confirm" id="confirm" value="Add event!">
-		</form> 
-        </div>
-	<p class=patten>Attendance</p>
+    <p class="patten">Add Attendance</p>
     <hr class="hratten">
     <?php
+<<<<<<< HEAD
         if (isset($_POST['confirm'])) {add();}
 			
         function add() {
@@ -50,6 +38,8 @@
 		?>
     </div>
     <?php
+=======
+>>>>>>> 36a6c84f0742019375af65d3b1bed66574dcfb57
 	fetch();
 	function fetch() {
 		
@@ -81,7 +71,7 @@
                 <td><input type='number' name='EventId' placeholder='".$row["S4"]."'></td>
                 <td><input type='number' name='EventId' placeholder='".$row["S4t"]."'></td>
                 <td><input type='number' name='EventId' placeholder='".$row["S5"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S5t"]."'></td>
+                <td><input type='number' name='EventId' placeholder='".$row["S5t"]." '></td>
                 <td>".$row["Attended"]."</td>
                 <td>".$row["Total"]."</td>
                 <td>".$row["Percent"]."</td>
