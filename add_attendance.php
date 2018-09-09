@@ -10,7 +10,7 @@
     <p class="patten">Add Attendance</p>
     <hr class="hratten">
     <?php
-         if (isset($_GET['UserId'])) {update();}
+        if (isset($_GET['UserId'])) {update();}
 			
         function update() {
 
