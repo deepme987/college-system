@@ -81,7 +81,7 @@
                 <td><input type='number' name='EventId' placeholder='".$row["S4"]."'></td>
                 <td><input type='number' name='EventId' placeholder='".$row["S4t"]."'></td>
                 <td><input type='number' name='EventId' placeholder='".$row["S5"]."'></td>
-                <td><input type='number' name='EventId' placeholder='".$row["S5t"]."'></td>
+                <td><input type='number' name='EventId' placeholder='".$row["S5t"]." '></td>
                 <td>".$row["Attended"]."</td>
                 <td>".$row["Total"]."</td>
                 <td>".$row["Percent"]."</td>
