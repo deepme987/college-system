@@ -34,7 +34,6 @@
         }
 				
 		?>
-    </div>
     <?php
 
 	fetch();
@@ -52,7 +51,7 @@
 
 		$row = mysqli_fetch_assoc($data);
 
-		echo "<div class=\"table\"><table><tr><th>Name</th><th>Class-Div-Roll</th><th>MP</th><th>MP-T</th><th>CN</th><th>CN-T</th><th>AOS</th><th>AOS-T</th><th>DBMS</th><th>DBMS-T</th><th>TCS</th><th>TCS-T</th><th>Attended</th><th>Total</th><th>Percentage</th><th>Update</th></tr>";
+		echo "<div class=\"table\"><table><tr><th>Name</th><th>Class-Div-Roll</th><th>MP</th><th>MP-T</th><th>CN</th><th>CN-T</th><th>AOS</th><th>AOS-T</th><th>DBMS</th><th>DBMS-T</th><th>TCS</th><th>TCS-T</th><th>Atten-ded</th><th>Total</th><th>Perce-ntage</th><th>Update</th></tr>";
 
 		while($row = mysqli_fetch_assoc($data)) {
 			echo
@@ -72,7 +71,7 @@
                 <td>".$row["Attended"]."</td>
                 <td>".$row["Total"]."</td>
                 <td>".$row["Percent"]."</td>
-            	<td><input type='submit' name='".$row['UserId']."submit' placeholder='Update' style='width:80px'></td>
+            	<td><input type='submit' name='".$row['UserId']."submit' value='Update' style='width:100%;height:100%;padding:0px'></td>
                 </form></tr>";
 		}
 		echo "</table></div>";
