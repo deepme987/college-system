@@ -13,7 +13,7 @@
 			exit("Not enough privilege.");
 		}
 	?>
-	<p class="patten">Add Details</p>
+	<p class="patten">Event Details</p>
     <hr class="hratten">
 	<div class="form">
         <div class="formsticky">

@@ -64,7 +64,7 @@
 	                <td>".$row["Fname"]." ".$row["Lname"]."</td>
 	                <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
 	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100px;' value='".$row["Notifications"]."'></td>
-	            	<td><input type='submit' name='".$row['UserId']."submit' placeholder='Update' style='width:80px'></td>
+	            	<td><input type='submit' name='".$row['UserId']."submit' value='Update' style='width:80px'></td>
 	                </form></tr>";
 			}
 			echo "</table></div>";
