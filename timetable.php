@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Time Table</title>
 	<link rel="stylesheet" href="Addons/attendance.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 	<p class="patten">Time Table for TE4</p>

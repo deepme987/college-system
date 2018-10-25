@@ -19,6 +19,7 @@ body
 {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 .asideleft
 {
@@ -40,6 +41,21 @@ body
     flex:15%;
     background-color: #333;
 }
+@media(max-width:460px)
+{
+    .asideleft
+    {
+        flex:100%;
+    }
+    .maincontent
+    {
+        flex:100%;
+    }
+    .asideright
+    {
+        flex:100%;
+    }
+}
 
 /*.iasideleft
 {
@@ -52,8 +68,9 @@ body
     justify-content: center;
     flex:80%;
 }
-.pheader
+.pheader a
 {
+    text-decoration: none;
     margin:10 0 0 10px;
     font-family: cursive;
     font-size: 40px;

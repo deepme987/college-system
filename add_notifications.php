@@ -5,6 +5,8 @@
 	<title>Attendance</title>
 	<link rel="stylesheet" href="Addons/attendance.css">
     <link rel="stylesheet" href="Addons/addattendance.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 	<?php
@@ -63,7 +65,7 @@
 	                <td>".$row["UserId"]."</td>	            
 	                <td>".$row["Fname"]." ".$row["Lname"]."</td>
 	                <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
-	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100px;' value='".$row["Notifications"]."'></td>
+	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100%;' value='".$row["Notifications"]."'></td>
 	            	<td><input type='submit' name='".$row['UserId']."submit' value='Update' style='width:80px'></td>
 	                </form></tr>";
 			}

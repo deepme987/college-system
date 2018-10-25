@@ -11,6 +11,8 @@
 		}
 	</script> 
 	<link rel="shortcut icon" href="Addons/title_img.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 

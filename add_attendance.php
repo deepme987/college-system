@@ -5,6 +5,7 @@
 	<title>Attendance</title>
 	<link rel="stylesheet" href="Addons/attendance.css">
     <link rel="stylesheet" href="Addons/addattendance.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <p class="patten">Add Attendance</p>

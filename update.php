@@ -6,6 +6,7 @@
 	<!-- <meta http-equiv="refresh" content="2"> -->
 	<link rel="stylesheet" href="Addons/updateNnewpass.css">
 	<title>Add Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>		
 	
