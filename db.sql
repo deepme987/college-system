@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2018 at 10:58 AM
+-- Generation Time: Oct 04, 2018 at 08:50 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -116,7 +116,7 @@ INSERT INTO `profile` (`UserId`, `Fname`, `Lname`, `RegNo`, `Class`, `Division`,
 ('I2016CM1007', 'Ashish', 'Ghadigaonkar', 12880, 'TE', 3, 29, 9664359034, 'Sairaj building, Datar Colony, Kanjur Marg East\r\n', 'sakec', 14, 21, 13, 18, 11, 15, 10, 16, 11, 15, NULL),
 ('M2016CM1071', 'Deep', 'Mehta', 13070, 'TE', 4, 60, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 17, 21, 14, 18, 9, 15, 16, 16, 11, 15, NULL),
 ('M2016CM1077', 'Hello', 'World', 82421, 'TE', 1, 55, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 0, 21, 0, 18, 0, 15, 0, 16, 0, 15, NULL),
-('M2016CM1080', 'Deep', 'Mehta', 31235, 'TE', 1, 32, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 1, 19, 0, 18, 0, 15, 10, 16, 0, 3, NULL);
+('M2016CM1080', 'Deep', 'Mehta', 31235, 'TE', 1, 32, 9870000393, 'B/204,Pooja Enclave, Ganesh Nagar', 'sakec', 2, 19, 0, 18, 0, 15, 10, 16, 0, 3, NULL);
 
 -- --------------------------------------------------------
 

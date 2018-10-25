@@ -65,7 +65,11 @@
 	                <td>".$row["UserId"]."</td>	            
 	                <td>".$row["Fname"]." ".$row["Lname"]."</td>
 	                <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
+<<<<<<< HEAD
 	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100%;' value='".$row["Notifications"]."'></td>
+=======
+	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100%; padding:0px;' value='".$row["Notifications"]."'></td>
+>>>>>>> 6c004e70e4f8c7fddb6ba5a204c6f2105e2bd1b7
 	            	<td><input type='submit' name='".$row['UserId']."submit' value='Update' style='width:80px'></td>
 	                </form></tr>";
 			}
