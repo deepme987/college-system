@@ -24,15 +24,14 @@ body
 .asideleft
 {
     flex:15%;
-    min-height:894px;
     background-color:#333;
-    
 }
 .maincontent
 {
     flex:70%;
     background-color:#D3D3D3;
-    min-height:650px;
+    height:auto;
+    overflow:auto;
     /*overflow: scroll;*/
 }
 .asideright
@@ -173,6 +172,12 @@ ul.nav > li > a.active {
 ul.nav > li a:hover {
     background-color: #111;
 }
+
+.nav-button
+{
+    display:none;
+}
+
 /*----------------------------------------------------------asideright------------------------------------------------------------------*/
 /*.iasideright p
 {
@@ -246,16 +251,17 @@ table,th,td
     {
         flex-direction:column;
     }
-    .asideleft
+    .asideleft,.maincontent,.asideright
     {
-        min-height:100px;
+        max-width:100%;
     }
-    .maincontent
+    .nav{
+        display:none;
+    }
+    .nav-button
     {
-        min-height:100px;
+        display:block;
     }
-    *//*----------------------------------------------------------header---------------------------------------------------------------------*/
-
     .leftheader
     {
         flex:70%;
@@ -263,7 +269,7 @@ table,th,td
     .rightheader
     {
         flex:30%;
-        padding:30px;
+        padding:20px;
     }
     .mainddheader li
     {

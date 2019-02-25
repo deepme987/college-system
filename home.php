@@ -54,7 +54,16 @@
 
     <div class="flex-container">
             <div class="asideleft">
-                <ul class="nav">
+                <p id="nav-button"class="nav-button" type="button" onclick="open"><i class="fa fa-bars"></i></p>
+                <script type="text/javascript" >
+                    $(document).ready(function(){
+                       $("#nav-button").click(function(){
+                            $("#nav").slideToggle();
+                        });
+                        
+                    });
+                </script>
+                <ul id="nav"class="nav">
                     <li><a class="btn <?php if($_GET["page"]==""){echo 'active';}?>" href="home.php">Dashboard</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="notifications.php"){echo 'active';}?>" href="home.php?page=notifications.php">Notifications</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="attendance.php"){echo 'active';}?>" href="home.php?page=attendance.php">Attendance record</a></li>
@@ -64,7 +73,9 @@
                     <li><a class="btn <?php if($_GET["page"]=="timetable.php"){echo 'active';}?>" href="home.php?page=timetable.php">Timetable</a></li>
                     <li><a class="btn <?php if($_GET["page"]=="update.php"){echo 'active';}?>" href="home.php?page=update.php">My profile</a></li>
                 </ul>
-            </div>
+                
+        </div>
+        
 
         <div class="maincontent">
             <?php
