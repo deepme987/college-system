@@ -54,7 +54,7 @@
 
     <div class="flex-container">
             <div class="asideleft">
-                <p id="nav-button"class="nav-button" type="button" onclick="open"><i class="fa fa-bars"></i></p>
+                <p id="nav-button"class="nav-button" type="button"><i class="fa fa-bars"></i></p>
                 <script type="text/javascript" >
                     $(document).ready(function(){
                        $("#nav-button").click(function(){

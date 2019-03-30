@@ -14,8 +14,8 @@
 				
 	    function update() {
 
-			$user = 'teacher';
-			$pass = 'root';
+			$user = 'student';
+			$pass = 'sakec';
 			$db = 'students';
 
 			$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
@@ -25,7 +25,7 @@
 			}
 
 			else{
-				$sql = "UPDATE `profile` SET `Notifications`=NULL WHERE UserId=\"".$_GET['UserId']."\"";	
+				$sql = "UPDATE `profile` SET `Notifications`=NULL WHERE UserId=\"".$_GET['UserId']."\"";
 			}
 
 			if (mysqli_query($conn, $sql)) {
@@ -65,11 +65,7 @@
 	                <td>".$row["UserId"]."</td>	            
 	                <td>".$row["Fname"]." ".$row["Lname"]."</td>
 	                <td>".$row["Class"]." ".$row["Division"]." ".$row["RollNo"]."</td>
-<<<<<<< HEAD
-	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100%;' value='".$row["Notifications"]."'></td>
-=======
 	                <td><input type='text' name='".$row['UserId']."Notifications' style='width:100%; padding:0px;' value='".$row["Notifications"]."'></td>
->>>>>>> 6c004e70e4f8c7fddb6ba5a204c6f2105e2bd1b7
 	            	<td><input type='submit' name='".$row['UserId']."submit' value='Update' style='width:80px'></td>
 	                </form></tr>";
 			}
